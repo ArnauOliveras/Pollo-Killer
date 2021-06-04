@@ -66,26 +66,42 @@ namespace TcGame
             weaponAim = Scene.Create<WeaponSight>();
             weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
 
-            WhiteHen whiteHen;
-            whiteHen = Scene.Create<WhiteHen>();
-            whiteHen.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
-
-            // Spawners that will be the responsibles for creating new actors in scene
-            //CreatePersonSpawner();
-            //CreateOvniSpawner();
-            //CreateTankSpawner();
+            
+            CreateWhiteHenSpawner();
+            CreateGreenHenSpawner();
+            CreateGoldenHenSpawner();
         }
 
-        //private void CreatePersonSpawner()
-        //{
-        //  ActorSpawner<Person> spawner;
-        //  spawner = Scene.Create<ActorSpawner<Person>>();
-        //  spawner.MinPosition = new Vector2f(0.0f, -200.0f);
-        //  spawner.MaxPosition = new Vector2f(1000.0f, -200.0f);
-        //  spawner.MinTime = 2.0f;
-        //  spawner.MinTime = 4.0f;
-        //  spawner.Reset();
-        //}
+        private void CreateWhiteHenSpawner()
+        {
+            ActorSpawner<WhiteHen> spawner;
+            spawner = Scene.Create<ActorSpawner<WhiteHen>>();
+            spawner.MinPosition = new Vector2f(100.0f, 200.0f);
+            spawner.MaxPosition = new Vector2f(100.0f, 200.0f);
+            spawner.MinTime = 2.0f;
+            spawner.MinTime = 4.0f;
+            spawner.Reset();
+        }
+        private void CreateGreenHenSpawner()
+        {
+            ActorSpawner<GreenHen> spawner;
+            spawner = Scene.Create<ActorSpawner<GreenHen>>();
+            spawner.MinPosition = new Vector2f(300.0f, 200.0f);
+            spawner.MaxPosition = new Vector2f(300.0f, 200.0f);
+            spawner.MinTime = 2.0f;
+            spawner.MinTime = 4.0f;
+            spawner.Reset();
+        }
+        private void CreateGoldenHenSpawner()
+        {
+            ActorSpawner<GoldenHen> spawner;
+            spawner = Scene.Create<ActorSpawner<GoldenHen>>();
+            spawner.MinPosition = new Vector2f(500.0f, 200.0f);
+            spawner.MaxPosition = new Vector2f(500.0f, 200.0f);
+            spawner.MinTime = 2.0f;
+            spawner.MinTime = 4.0f;
+            spawner.Reset();
+        }
 
         //private void CreateOvniSpawner()
         //{
