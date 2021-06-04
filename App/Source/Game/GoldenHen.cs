@@ -20,7 +20,7 @@ namespace TcGame
             Center();
             left = true;
             speed = 5.0f;
-            movimientoY = generateMovimientoY();
+            movimientoY = generateMovimientoY(); 
         }
 
         
