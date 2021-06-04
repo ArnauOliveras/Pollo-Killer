@@ -45,8 +45,21 @@ namespace TcGame
 
         }
 
+        public enum State
+        {
+            None,
+            Splash,
+            Playing,
+            Option
+        }
+
+        public State currentState = State.None;
+
         public void Init()
         {
+
+
+
             Resources.LoadResources();
 
             VideoMode videoMode = new VideoMode(1000, 649);
