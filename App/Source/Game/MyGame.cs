@@ -60,6 +60,11 @@ namespace TcGame
         public void Init()
         {
 
+            if (Keyboard.Key.Space)
+            //Engine.Get.Scene.Create<Background>();
+            //HUD myHUD = Engine.Get.Scene.Create<HUD>();
+            //Engine.Get.Scene.Create<FishSpawner>();
+            ChangeState(State.Splash);
 
 
             Resources.LoadResources();
@@ -86,6 +91,14 @@ namespace TcGame
             CreateGreenHenSpawner();
             CreateGoldenHenSpawner();
             CreateBirdSpawner();
+        }
+
+        public void ChangeState(State newState)
+        {
+            onLeaveState(currentState);
+            onEnterState(newState);
+            currentState = newState;
+
         }
 
         private void CreateWhiteHenSpawner()
