@@ -24,7 +24,8 @@ namespace TcGame
         /// </summary>
         private static MyGame instance;
         public float maxMinY = 600;
-        public float maxMinX = -20;
+        public float LeftMaxMinX = -20;
+        public float RightMaxMinX = 1020;
 
         /// <summary>
         /// Accesor for MyGame, implements the Singleton pattern
@@ -86,14 +87,18 @@ namespace TcGame
             CreateGreenHenSpawner();
             CreateGoldenHenSpawner();
             CreateBirdSpawner();
+            CreateWhiteHenXSpawner();
+            CreateGreenHenXSpawner();
+            CreateGoldenHenXSpawner();
+            CreateBirdXSpawner();
         }
 
         private void CreateWhiteHenSpawner()
         {
             ActorSpawner<WhiteHen> spawner;
             spawner = Scene.Create<ActorSpawner<WhiteHen>>();
-            spawner.MinPosition = new Vector2f(maxMinX, maxMinY);
-            spawner.MaxPosition = new Vector2f(maxMinX, maxMinY);
+            spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MinTime = 5.0f;
             spawner.MinTime = 10.0f;
             spawner.Reset();
@@ -102,8 +107,8 @@ namespace TcGame
         {
             ActorSpawner<GreenHen> spawner;
             spawner = Scene.Create<ActorSpawner<GreenHen>>(); 
-            spawner.MinPosition = new Vector2f(maxMinX, maxMinY);
-            spawner.MaxPosition = new Vector2f(maxMinX, maxMinY);
+            spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MinTime = 20.0f;
             spawner.MinTime = 30.0f;
             spawner.Reset();
@@ -112,8 +117,8 @@ namespace TcGame
         {
             ActorSpawner<GoldenHen> spawner;
             spawner = Scene.Create<ActorSpawner<GoldenHen>>();
-            spawner.MinPosition = new Vector2f(maxMinX, maxMinY);
-            spawner.MaxPosition = new Vector2f(maxMinX, maxMinY);
+            spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MinTime = 10.0f;
             spawner.MinTime = 20.0f;
             spawner.Reset();
@@ -122,8 +127,48 @@ namespace TcGame
         {
             ActorSpawner<Bird> spawner;
             spawner = Scene.Create<ActorSpawner<Bird>>();
-            spawner.MinPosition = new Vector2f(maxMinX, maxMinY);
-            spawner.MaxPosition = new Vector2f(maxMinX, maxMinY);
+            spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MinTime = 5.0f;
+            spawner.MinTime = 10.0f;
+            spawner.Reset();
+        }
+        private void CreateWhiteHenXSpawner()
+        {
+            ActorSpawner<WhiteHenX> spawner;
+            spawner = Scene.Create<ActorSpawner<WhiteHenX>>();
+            spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
+            spawner.MinTime = 5.0f;
+            spawner.MinTime = 10.0f;
+            spawner.Reset();
+        }
+        private void CreateGreenHenXSpawner()
+        {
+            ActorSpawner<GreenHenX> spawner;
+            spawner = Scene.Create<ActorSpawner<GreenHenX>>(); 
+            spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
+            spawner.MinTime = 20.0f;
+            spawner.MinTime = 30.0f;
+            spawner.Reset();
+        }
+        private void CreateGoldenHenXSpawner()
+        {
+            ActorSpawner<GoldenHenX> spawner;
+            spawner = Scene.Create<ActorSpawner<GoldenHenX>>();
+            spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
+            spawner.MinTime = 10.0f;
+            spawner.MinTime = 20.0f;
+            spawner.Reset();
+        }
+        private void CreateBirdXSpawner()
+        {
+            ActorSpawner<BirdX> spawner;
+            spawner = Scene.Create<ActorSpawner<BirdX>>();
+            spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MinTime = 5.0f;
             spawner.MinTime = 10.0f;
             spawner.Reset();

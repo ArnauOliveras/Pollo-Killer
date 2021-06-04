@@ -33,7 +33,7 @@ namespace TcGame
 
             if (Position.X >= 1030)
             {
-
+                Destroy();
             }
         }
 

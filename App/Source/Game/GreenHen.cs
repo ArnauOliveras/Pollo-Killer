@@ -19,7 +19,7 @@ namespace TcGame
             Position = new Vector2f(1024, 768) / 2;
             Center();
             left = true;
-            speed = 1;
+            speed = 6.0f;
             movimientoY = generateMovimientoY();
         }
 
@@ -40,7 +40,7 @@ namespace TcGame
             Position = new Vector2f(1024, 768) / 2;
             Center();
             left = false;
-            speed = 1;
+            speed = 6.0f;
             movimientoY = generateMovimientoY();
         }
 
