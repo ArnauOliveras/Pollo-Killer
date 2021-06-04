@@ -23,6 +23,8 @@ namespace TcGame
         /// Unique instance of MyGame
         /// </summary>
         private static MyGame instance;
+        public float maxMinY = 600;
+        public float maxMinX = -20;
 
         /// <summary>
         /// Accesor for MyGame, implements the Singleton pattern
@@ -90,8 +92,8 @@ namespace TcGame
         {
             ActorSpawner<WhiteHen> spawner;
             spawner = Scene.Create<ActorSpawner<WhiteHen>>();
-            spawner.MinPosition = new Vector2f(-20.0f, 649.0f);
-            spawner.MaxPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MinPosition = new Vector2f(maxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(maxMinX, maxMinY);
             spawner.MinTime = 5.0f;
             spawner.MinTime = 10.0f;
             spawner.Reset();
@@ -100,8 +102,8 @@ namespace TcGame
         {
             ActorSpawner<GreenHen> spawner;
             spawner = Scene.Create<ActorSpawner<GreenHen>>(); 
-            spawner.MinPosition = new Vector2f(-20.0f, 649.0f);
-            spawner.MaxPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MinPosition = new Vector2f(maxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(maxMinX, maxMinY);
             spawner.MinTime = 20.0f;
             spawner.MinTime = 30.0f;
             spawner.Reset();
@@ -110,8 +112,8 @@ namespace TcGame
         {
             ActorSpawner<GoldenHen> spawner;
             spawner = Scene.Create<ActorSpawner<GoldenHen>>();
-            spawner.MinPosition = new Vector2f(-20.0f, 649.0f);
-            spawner.MaxPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MinPosition = new Vector2f(maxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(maxMinX, maxMinY);
             spawner.MinTime = 10.0f;
             spawner.MinTime = 20.0f;
             spawner.Reset();
@@ -120,8 +122,8 @@ namespace TcGame
         {
             ActorSpawner<Bird> spawner;
             spawner = Scene.Create<ActorSpawner<Bird>>();
-            spawner.MinPosition = new Vector2f(-20.0f, 649.0f);
-            spawner.MaxPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MinPosition = new Vector2f(maxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(maxMinX, maxMinY);
             spawner.MinTime = 5.0f;
             spawner.MinTime = 10.0f;
             spawner.Reset();

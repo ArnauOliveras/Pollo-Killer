@@ -18,8 +18,9 @@ namespace TcGame
             AnimatedSprite.FrameTime = 0.1f;
             Position = new Vector2f(1024, 768) / 2;
             Center();
-            speed = 1;
             left = true;
+            speed = 1;
+            movimientoY = generateMovimientoY();
         }
 
         
@@ -38,6 +39,9 @@ namespace TcGame
             AnimatedSprite.FrameTime = 0.1f;
             Position = new Vector2f(1024, 768) / 2;
             Center();
+            left = false;
+            speed = 1;
+            movimientoY = generateMovimientoY();
         }
 
         public override void Update(float dt)
