@@ -18,7 +18,7 @@ namespace TcGame
         {
             base.Update(dt);
             Vector2f movimiento = new Vector2f(1.0f, -1.0f);
-            Position += movimiento * 2f;
+            Position += movimiento * 2f; 
         }
 
 
