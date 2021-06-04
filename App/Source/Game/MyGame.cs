@@ -66,6 +66,10 @@ namespace TcGame
             weaponAim = Scene.Create<WeaponSight>();
             weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
 
+            WhiteHen whiteHen;
+            whiteHen = Scene.Create<WhiteHen>();
+            whiteHen.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
+
             // Spawners that will be the responsibles for creating new actors in scene
             //CreatePersonSpawner();
             //CreateOvniSpawner();
