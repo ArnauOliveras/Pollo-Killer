@@ -475,6 +475,12 @@
     <None Update="Data\Textures\FX\PlaneCloudGas.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\Textures\Intro.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Textures\Intro02.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Textures\Mira.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
