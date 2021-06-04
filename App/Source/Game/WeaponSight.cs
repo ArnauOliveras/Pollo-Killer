@@ -5,21 +5,21 @@ using System;
 
 namespace TcGame
 {
-    public class WeaponAim : StaticActor
+    public class WeaponSight : StaticActor
     {
         private Texture texture;
         private Vector2f WeaponAimOffset1, WeaponAimOffset2;
 
-        public WeaponAim()
+        public WeaponSight()
         {
             WeaponAimOffset1 = new Vector2f(30.0f, -30.0f);
             WeaponAimOffset2 = new Vector2f(-40.0f, -30.0f);
 
-            Aim WeaponAim1 = MyGame.Instance.Scene.Create<Aim>();
+            Sight WeaponAim1 = MyGame.Instance.Scene.Create<Sight>();
             WeaponAim1.Position = Position + WeaponAimOffset1;
             WeaponAim1.Rotation = Rotation;
 
-            Aim WeaponAim2 = MyGame.Instance.Scene.Create<Aim>();
+            Sight WeaponAim2 = MyGame.Instance.Scene.Create<Sight>();
             WeaponAim2.Position = Position + WeaponAimOffset2;
             WeaponAim2.Rotation = Rotation;
 

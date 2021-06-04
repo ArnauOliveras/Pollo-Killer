@@ -5,20 +5,20 @@ using System;
 
 namespace TcGame
 {
-    public class Aim : StaticActor
+    public class Sight : StaticActor
     {
         private Texture texture;
         //private Vector2f WeaponAim1, WeaponAim2;
 
-        public Aim()
+        public Sight()
         {
-            //Layer = ELayer.Back;
+            Layer = ELayer.Back;
 
-            //texture = Resources.Texture("Textures/Mira.png");
-            //texture.Repeated = true;
-            //Sprite = new Sprite(texture);
-            //Position = new Vector2f(1024, 768) / 2;
-            //Center();
+            texture = Resources.Texture("Textures/Mira");
+            texture.Repeated = true;
+            Sprite = new Sprite(texture);
+            Position = new Vector2f(1024, 768) / 2;
+            Center();
 
         }
         public override void Update(float dt)

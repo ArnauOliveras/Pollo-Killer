@@ -62,8 +62,8 @@ namespace TcGame
             background = Scene.Create<Background>();
             background.Speed = WorldSpeed;
 
-            WeaponAim weaponAim;
-            weaponAim = Scene.Create<WeaponAim>();
+            WeaponSight weaponAim;
+            weaponAim = Scene.Create<WeaponSight>();
             weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
 
             // Spawners that will be the responsibles for creating new actors in scene
