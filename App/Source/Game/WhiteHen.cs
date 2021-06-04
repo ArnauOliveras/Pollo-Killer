@@ -20,7 +20,7 @@ namespace TcGame
             Position = new Vector2f(1024, 768) / 2;
             Center();
             speed = 1;
-            
+            left = true;
         }
 
     }

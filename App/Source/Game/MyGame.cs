@@ -79,38 +79,38 @@ namespace TcGame
             spawner = Scene.Create<ActorSpawner<WhiteHen>>();
             spawner.MinPosition = new Vector2f(-20.0f, 649.0f);
             spawner.MaxPosition = new Vector2f(-20.0f, 649.0f);
-            spawner.MinTime = 2.0f;
-            spawner.MinTime = 4.0f;
+            spawner.MinTime = 5.0f;
+            spawner.MinTime = 10.0f;
             spawner.Reset();
         }
         private void CreateGreenHenSpawner()
         {
             ActorSpawner<GreenHen> spawner;
-            spawner = Scene.Create<ActorSpawner<GreenHen>>();
-            spawner.MinPosition = new Vector2f(300.0f, 200.0f);
-            spawner.MaxPosition = new Vector2f(300.0f, 200.0f);
-            spawner.MinTime = 2.0f;
-            spawner.MinTime = 4.0f;
+            spawner = Scene.Create<ActorSpawner<GreenHen>>(); 
+            spawner.MinPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MaxPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MinTime = 20.0f;
+            spawner.MinTime = 30.0f;
             spawner.Reset();
         }
         private void CreateGoldenHenSpawner()
         {
             ActorSpawner<GoldenHen> spawner;
             spawner = Scene.Create<ActorSpawner<GoldenHen>>();
-            spawner.MinPosition = new Vector2f(500.0f, 200.0f);
-            spawner.MaxPosition = new Vector2f(500.0f, 200.0f);
-            spawner.MinTime = 2.0f;
-            spawner.MinTime = 4.0f;
+            spawner.MinPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MaxPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MinTime = 10.0f;
+            spawner.MinTime = 20.0f;
             spawner.Reset();
         }
         private void CreateBirdSpawner()
         {
             ActorSpawner<Bird> spawner;
             spawner = Scene.Create<ActorSpawner<Bird>>();
-            spawner.MinPosition = new Vector2f(700.0f, 200.0f);
-            spawner.MaxPosition = new Vector2f(700.0f, 200.0f);
-            spawner.MinTime = 2.0f;
-            spawner.MinTime = 4.0f;
+            spawner.MinPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MaxPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MinTime = 5.0f;
+            spawner.MinTime = 10.0f;
             spawner.Reset();
         }
 

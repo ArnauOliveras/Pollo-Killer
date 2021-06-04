@@ -9,6 +9,7 @@ namespace TcGame
     {
         private Random rnd;
         public float speed;
+        public bool left;
         protected Enemy()
         {
             OnDestroy += Explode;
@@ -17,8 +18,15 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
-            Vector2f movimiento = new Vector2f(1.0f, -1.0f);
-            Position += movimiento * 2f; 
+            if (left)
+            {
+                Vector2f movimiento = new Vector2f(1.0f, -1.0f);
+                Position += movimiento * 2f;
+            }
+            else
+            {
+
+            }
         }
 
 
