@@ -18,12 +18,10 @@ namespace TcGame
             AnimatedSprite.FrameTime = 0.1f;
             Position = new Vector2f(1024, 768) / 2;
             Center();
+            speed = 1;
         }
 
-        public override void Update(float dt)
-        {
-            base.Update(dt);
-        }
+        
     }
 
     public class GoldenHenX : Enemy
