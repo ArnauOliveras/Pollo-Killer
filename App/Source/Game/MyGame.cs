@@ -103,28 +103,6 @@ namespace TcGame
             spawner.Reset();
         }
 
-        //private void CreateOvniSpawner()
-        //{
-        //  ActorSpawner<Ovni> spawner;
-        //  spawner = Scene.Create<ActorSpawner<Ovni>>();
-        //  spawner.MinPosition = new Vector2f(0.0f, +1000.0f);
-        //  spawner.MaxPosition = new Vector2f(1000.0f, +1000.0f);
-        //  spawner.MinTime = 8.0f;
-        //  spawner.MinTime = 15.0f;
-        //  spawner.Reset();
-        //}
-
-        //private void CreateTankSpawner()
-        //{
-        //  ActorSpawner<Tank> spawner;
-        //  spawner = Scene.Create<ActorSpawner<Tank>>();
-        //  spawner.MinPosition = new Vector2f(0.0f, -400.0f);
-        //  spawner.MaxPosition = new Vector2f(1000.0f, 0.0f);
-        //  spawner.MinTime = 8.0f;
-        //  spawner.MinTime = 10.0f;
-        //  spawner.Reset();
-        //}
-
         public void DeInit()
         {
             Debug.DeInit();
