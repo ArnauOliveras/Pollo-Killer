@@ -30,6 +30,11 @@ namespace TcGame
                 Vector2f movimiento = new Vector2f(-1.0f, movimientoY);
                 Position += movimiento * speed;
             }
+
+            if (Position.X >= 1030)
+            {
+                Destroy();
+            }
         }
 
 
