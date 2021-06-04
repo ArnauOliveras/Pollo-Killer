@@ -70,14 +70,15 @@ namespace TcGame
             CreateWhiteHenSpawner();
             CreateGreenHenSpawner();
             CreateGoldenHenSpawner();
+            CreateBirdSpawner();
         }
 
         private void CreateWhiteHenSpawner()
         {
             ActorSpawner<WhiteHen> spawner;
             spawner = Scene.Create<ActorSpawner<WhiteHen>>();
-            spawner.MinPosition = new Vector2f(100.0f, 200.0f);
-            spawner.MaxPosition = new Vector2f(100.0f, 200.0f);
+            spawner.MinPosition = new Vector2f(-20.0f, 649.0f);
+            spawner.MaxPosition = new Vector2f(-20.0f, 649.0f);
             spawner.MinTime = 2.0f;
             spawner.MinTime = 4.0f;
             spawner.Reset();
@@ -98,6 +99,16 @@ namespace TcGame
             spawner = Scene.Create<ActorSpawner<GoldenHen>>();
             spawner.MinPosition = new Vector2f(500.0f, 200.0f);
             spawner.MaxPosition = new Vector2f(500.0f, 200.0f);
+            spawner.MinTime = 2.0f;
+            spawner.MinTime = 4.0f;
+            spawner.Reset();
+        }
+        private void CreateBirdSpawner()
+        {
+            ActorSpawner<Bird> spawner;
+            spawner = Scene.Create<ActorSpawner<Bird>>();
+            spawner.MinPosition = new Vector2f(700.0f, 200.0f);
+            spawner.MaxPosition = new Vector2f(700.0f, 200.0f);
             spawner.MinTime = 2.0f;
             spawner.MinTime = 4.0f;
             spawner.Reset();
