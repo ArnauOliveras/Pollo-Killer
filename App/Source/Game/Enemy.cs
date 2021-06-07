@@ -12,6 +12,7 @@ namespace TcGame
         public bool left;
         public float movimientoY;
         public string nameEnemy;
+
         protected Enemy()
         {
             OnDestroy += Explode;
@@ -24,7 +25,7 @@ namespace TcGame
             moveEnemy();
             DestroyThisEnemy();
 
-
+            
             
         }
 

@@ -99,7 +99,8 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MinTime = 5.0f;
-            spawner.MinTime = 10.0f;
+            spawner.MaxTime = 10.0f;
+            spawner.nameEnemy = "whiteHen";
             spawner.Reset();
         }
         private void CreateGreenHenSpawner()
@@ -109,7 +110,8 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MinTime = 20.0f;
-            spawner.MinTime = 30.0f;
+            spawner.MaxTime = 30.0f;
+            spawner.nameEnemy = "greenHen";
             spawner.Reset();
         }
         private void CreateGoldenHenSpawner()
@@ -119,7 +121,8 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MinTime = 10.0f;
-            spawner.MinTime = 20.0f;
+            spawner.MaxTime = 20.0f;
+            spawner.nameEnemy = "goldenHen";
             spawner.Reset();
         }
         private void CreateBirdSpawner()
@@ -129,7 +132,8 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MinTime = 5.0f;
-            spawner.MinTime = 10.0f;
+            spawner.MaxTime = 10.0f;
+            spawner.nameEnemy = "Bird";
             spawner.Reset();
         }
         private void CreateWhiteHenXSpawner()
@@ -139,7 +143,8 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MinTime = 5.0f;
-            spawner.MinTime = 10.0f;
+            spawner.MaxTime = 10.0f;
+            spawner.nameEnemy = "whiteHen";
             spawner.Reset();
         }
         private void CreateGreenHenXSpawner()
@@ -149,7 +154,8 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MinTime = 20.0f;
-            spawner.MinTime = 30.0f;
+            spawner.MaxTime = 30.0f;
+            spawner.nameEnemy = "greenHen";
             spawner.Reset();
         }
         private void CreateGoldenHenXSpawner()
@@ -159,7 +165,8 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MinTime = 10.0f;
-            spawner.MinTime = 20.0f;
+            spawner.MaxTime = 20.0f;
+            spawner.nameEnemy = "goldenHen";
             spawner.Reset();
         }
         private void CreateBirdXSpawner()
@@ -169,7 +176,8 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MinTime = 5.0f;
-            spawner.MinTime = 10.0f;
+            spawner.MaxTime = 10.0f;
+            spawner.nameEnemy = "Bird" ;
             spawner.Reset();
         }
 
