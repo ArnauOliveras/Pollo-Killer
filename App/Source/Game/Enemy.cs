@@ -40,8 +40,7 @@ namespace TcGame
             moveEnemy();
             DestroyThisEnemy();
 
-
-            if (h.getMunition() <= 0)
+            if (h.getLives() <= 0)
             {
                 Destroy();
             }
