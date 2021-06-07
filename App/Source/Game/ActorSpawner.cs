@@ -21,6 +21,7 @@ namespace TcGame
             float d = (float)r.NextDouble();
 
             coolDown = MaxTime * d + (1.0f - d) * MinTime;
+            //coolDown = 0.3f;
         }
 
         public override void Update(float dt)

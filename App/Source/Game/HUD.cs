@@ -27,7 +27,7 @@ namespace TcGame
         {
             base.Update(dt);
 
-            tHUD.DisplayedString = String.Format(" points: {0} \n lives: {1}\n munition: {2}\n level: {3}", points, lives, munition, level);
+            tHUD.DisplayedString = String.Format(" puntos: {0} \n vidas: {1}\n municion: {2}\n nivel: {3}", points, lives, munition, level);
 
             
         }
@@ -42,8 +42,10 @@ namespace TcGame
         }
         public void liveCount (int l)
         {
-            if(!(lives == 5 || lives == 0))
+            if(!(lives == 0))
             lives += l;
+            if (lives >= 6)
+                lives = 5;
         }
         public void munitionCount(int m)
         {

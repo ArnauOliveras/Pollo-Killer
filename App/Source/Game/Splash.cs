@@ -25,10 +25,5 @@ namespace TcGame
             states.Texture = texture;
             base.Draw(target, states);
         }
-
-        public override void Update(float dt)
-        {
-            base.Update(dt);
-        }
     }
 }
