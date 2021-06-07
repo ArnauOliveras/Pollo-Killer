@@ -14,13 +14,14 @@ namespace TcGame
 
         private float coolDown;
         public string nameEnemy;
+        public HUD h = new HUD();
 
         public void Reset()
         {
             Random r = new Random();
             float d = (float)r.NextDouble();
 
-            coolDown = MaxTime * d + (1.0f - d) * MinTime;
+            coolDown = (MaxTime * d + (1.0f - d) * MinTime) * h.timeSpawn;
             //coolDown = 0.3f;
         }
 

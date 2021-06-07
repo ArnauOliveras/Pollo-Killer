@@ -87,12 +87,12 @@ namespace TcGame
             if (left)
             {
                 Vector2f movimiento = new Vector2f(1.0f, movimientoY);
-                Position += movimiento * speed;
+                Position += movimiento * speed * h.speedEnemys;
             }
             else
             {
                 Vector2f movimiento = new Vector2f(-1.0f, movimientoY);
-                Position += movimiento * speed;
+                Position += movimiento * speed * h.speedEnemys;
             }
         }
 
