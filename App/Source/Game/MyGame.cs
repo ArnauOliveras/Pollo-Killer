@@ -83,7 +83,7 @@ namespace TcGame
             weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
 
             CreateWhiteHenSpawner();
-            CreateGreenHenSpawner();
+            CreateGreenHenSpawner(); 
             CreateGoldenHenSpawner();
             CreateBirdSpawner();
             CreateWhiteHenXSpawner();
