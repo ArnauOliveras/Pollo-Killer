@@ -25,9 +25,9 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
-            Console.WriteLine("points: {0}", points);
+            //Console.WriteLine("points: {0}", points);
             Console.WriteLine("lives: {0}", lives);
-            Console.WriteLine("points: {0}", points);
+            Console.WriteLine("munition: {0}", munition);
         }
 
         public void addPoints(int p)
