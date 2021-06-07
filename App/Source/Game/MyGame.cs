@@ -22,10 +22,10 @@ namespace TcGame
         /// <summary>
         /// Unique instance of MyGame
         /// </summary>
-        private static MyGame instance;
+        private static MyGame instance; 
         public float maxMinY = 600;
-        public float LeftMaxMinX = -20;
-        public float RightMaxMinX = 1020;
+        public float LeftMaxMinX = -40;
+        public float RightMaxMinX = 1040;
 
         private Vector2f leftSightOffset, rightSightOffset;
 

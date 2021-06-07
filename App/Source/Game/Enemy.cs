@@ -15,27 +15,17 @@ namespace TcGame
         protected Enemy()
         {
             OnDestroy += Explode;
-            
+
         }
 
         public override void Update(float dt)
         {
             base.Update(dt);
-            if (left)
-            {
-                Vector2f movimiento = new Vector2f(1.0f, movimientoY);
-                Position += movimiento * speed;
-            }
-            else
-            {
-                Vector2f movimiento = new Vector2f(-1.0f, movimientoY);
-                Position += movimiento * speed;
-            }
+            moveEnemy();
+            DestroyThisEnemy();
 
-            if (Position.X >= 1040 || Position.X <= -40 || Position.Y <= -40)
-            {
-                Destroy();
-            }
+
+            
         }
 
 
@@ -43,12 +33,12 @@ namespace TcGame
         {
             MyGame.Instance.Scene.Create<Explosion>(Position);
         }
-        
+
         protected float generateMovimientoY()
         {
             float movimientoDeLaY = -0.75f;
             int Y = 0;
-            Y = rnd.Next(3,10);
+            Y = rnd.Next(3, 10);
 
             switch (Y)
             {
@@ -75,6 +65,28 @@ namespace TcGame
                     break;
             }
             return movimientoDeLaY;
+        }
+
+
+        private void moveEnemy()
+        {
+            if (left)
+            {
+                Vector2f movimiento = new Vector2f(1.0f, movimientoY);
+                Position += movimiento * speed;
+            }
+            else
+            {
+                Vector2f movimiento = new Vector2f(-1.0f, movimientoY);
+                Position += movimiento * speed;
+            }
+        }
+        private void DestroyThisEnemy()
+        {
+            if (Position.X >= 1050 || Position.X <= -40 || Position.Y <= -50)
+            {
+                Destroy();
+            }
         }
     }
 }
