@@ -29,7 +29,6 @@ namespace TcGame
             Vector2f movimiento = new Vector2f(415.0f, moveYSight());
             Position = movimiento;
             timer += dt;
-            shotLeft();
 
             if (Keyboard.IsKeyPressed(Keyboard.Key.A) && hasShootLeft == false)
             {
