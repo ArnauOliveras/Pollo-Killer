@@ -34,23 +34,25 @@ namespace TcGame
             base.Update(dt);
 
             tHUD.DisplayedString = String.Format(" puntos: {0} \n vidas: {1}\n municion: {2}\n nivel: {3}", points, lives, munition, level);
-            
+
+            timer += dt;
 
             if (munition <= 0 && lives > 0)
             {
-                timer = 0;
-
-                if (timer > 1.0f)
+                if (timer <= 1.0f)
                 {
-                    tHUD.FillColor = new Color(Color.Red);
+                    tHUD.FillColor = new Color(Color.White);
                 }
 
-                if (timer > 2.0f)
+                if (timer >= 1.0f)
                 {
                     tHUD.FillColor = new Color(Color.Blue);
                 }
 
-                timer = 0;
+                if (timer >= 2.0f)
+                {
+                    timer = 0;
+                }
             }
 
             if (lives <= 0)
