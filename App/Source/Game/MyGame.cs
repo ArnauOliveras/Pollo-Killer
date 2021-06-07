@@ -54,12 +54,6 @@ namespace TcGame
 
         public void Init()
         {
-
-            //if (Keyboard.IsKeyPressed(Keyboard.Key.D))
-            //{
-            //    gameStarted = true;
-            //}
-
             Resources.LoadResources();
 
             VideoMode videoMode = new VideoMode(1000, 649);
@@ -74,10 +68,6 @@ namespace TcGame
             Background background;
             background = Scene.Create<Background>();
             background.Speed = WorldSpeed;
-
-            //if (gameStarted == true)
-            //{ 
-            //}
 
             leftSightOffset = new Vector2f(-85.0f, 250.0f);
             rightSightOffset = new Vector2f(65.0f, 250.0f);

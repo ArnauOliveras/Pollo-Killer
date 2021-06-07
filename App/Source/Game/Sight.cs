@@ -30,6 +30,11 @@ namespace TcGame
             {
                 Position = MyGame.leftStartPosition;
             }
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.A))
+            {
+                Enemy.CheckPosition(Position);
+            }
         }
     }
 
@@ -59,7 +64,7 @@ namespace TcGame
                 Position = MyGame.rightStartPosition;
             }
 
-            if ()
+            if (Keyboard.IsKeyPressed(Keyboard.Key.D))
             {
                 Enemy.CheckPosition(Position);
             }

@@ -26,8 +26,10 @@ namespace TcGame
             moveEnemy();
             DestroyThisEnemy();
 
-            
-            
+            if (sightPosition == Position)
+            {
+                CheckIfDestroy();
+            }
         }
 
 
@@ -101,18 +103,12 @@ namespace TcGame
         {
             if (left == true)
             {
-                if (sightPosition == Position)
-                {
-                    Destroy();
-                }
+                Destroy();
             }
 
             if (left == false)
             {
-                if (sightPosition == Position)
-                {
-                    Destroy();
-                }
+                Destroy();
             }
         }
 
