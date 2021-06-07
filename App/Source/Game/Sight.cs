@@ -12,7 +12,7 @@ namespace TcGame
 
         public Sight()
         {
-            Layer = ELayer.Back;
+            Layer = ELayer.Front;
 
             texture = Resources.Texture("Textures/Mira");
             texture.Repeated = true;

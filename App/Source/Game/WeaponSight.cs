@@ -8,6 +8,7 @@ namespace TcGame
     public class WeaponSight : StaticActor
     {
         private Texture texture;
+
         private Vector2f WeaponAimOffset1, WeaponAimOffset2;
 
         public WeaponSight()
@@ -24,6 +25,7 @@ namespace TcGame
             WeaponAim2.Rotation = Rotation;
 
         }
+
         public override void Update(float dt)
         {
             base.Update(dt);

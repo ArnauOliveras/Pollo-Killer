@@ -27,7 +27,7 @@ namespace TcGame
         public float LeftMaxMinX = -20;
         public float RightMaxMinX = 1020;
 
-        private bool gameStarted = false;
+        private Vector2f leftSightOffset, rightSightOffset;
 
         /// <summary>
         /// Accesor for MyGame, implements the Singleton pattern
@@ -74,13 +74,23 @@ namespace TcGame
             background.Speed = WorldSpeed;
 
             //if (gameStarted == true)
-            //{
-                
+            //{ 
             //}
 
-            WeaponSight weaponAim;
-            weaponAim = Scene.Create<WeaponSight>();
-            weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
+            leftSightOffset = new Vector2f(30.0f, -30.0f);
+            rightSightOffset = new Vector2f(-40.0f, -30.0f);
+
+            Sight leftSight;
+            leftSight = Scene.Create<Sight>();
+            leftSight.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2 + leftSightOffset;
+
+            Sight rightSight;
+            rightSight = Scene.Create<Sight>();
+            rightSight.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2 + rightSightOffset;
+
+            //WeaponSight weaponAim;
+            //weaponAim = Scene.Create<WeaponSight>();
+            //weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
 
             CreateWhiteHenSpawner();
             CreateGreenHenSpawner(); 
