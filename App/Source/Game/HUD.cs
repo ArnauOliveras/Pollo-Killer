@@ -42,10 +42,12 @@ namespace TcGame
         }
         public void liveCount (int l)
         {
-            if(!(lives == 0))
+            
             lives += l;
             if (lives >= 6)
                 lives = 5;
+            if (lives <= 0)
+                lives = 0;
         }
         public void munitionCount(int m)
         {
