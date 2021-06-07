@@ -41,12 +41,12 @@ namespace TcGame
             {
                 if (timer <= 1.0f)
                 {
-                    tHUD.FillColor = new Color(Color.White);
+                    tHUD.FillColor = new Color(Color.Yellow);
                 }
 
                 if (timer >= 1.0f)
                 {
-                    tHUD.FillColor = new Color(Color.Blue);
+                    tHUD.FillColor = new Color(Color.White);
                 }
 
                 if (timer >= 2.0f)
