@@ -68,7 +68,27 @@ namespace TcGame
                 timeSpawn = 0.6f;
             }
 
-            
+            if (munition <= 0 && lives > 0)
+            {
+                timer = 0;
+
+                if (timer > 1.0f)
+                {
+                    tHUD.FillColor = new Color(Color.Red);
+                }
+
+                if (timer > 2.0f)
+                {
+                    tHUD.FillColor = new Color(Color.Blue);
+                }
+
+                timer = 0;
+            }
+
+            if (lives <= 0)
+            {
+                tHUD.FillColor = new Color(Color.Red);
+            }
         }
         public void Draw(RenderTarget rt, RenderStates st)
         {
