@@ -29,10 +29,6 @@ namespace TcGame
 
             tHUD.DisplayedString = String.Format(" points: {0} \n lives: {1}\n munition: {2}\n level: {3}", points, lives, munition, level);
 
-            Console.WriteLine("points: {0}", points);
-            Console.WriteLine("lives: {0}", lives);
-            Console.WriteLine("munition: {0}", munition);
-            Console.WriteLine("level: {0}", level);
             
         }
         public void Draw(RenderTarget rt, RenderStates st)
