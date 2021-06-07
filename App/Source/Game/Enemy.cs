@@ -100,7 +100,7 @@ namespace TcGame
                     }
                     else
                     {
-                        h.liveCount(-1);
+                        h.liveCount(-1); 
                     }
                 }
 
