@@ -19,6 +19,8 @@ namespace TcGame
         private static int munition = 10;
         private static int level = 1;
 
+        private float timer = 0;
+
         public HUD()
         {
             Layer = ELayer.HUD;
@@ -32,6 +34,8 @@ namespace TcGame
             base.Update(dt);
 
             tHUD.DisplayedString = String.Format(" puntos: {0} \n vidas: {1}\n municion: {2}\n nivel: {3}", points, lives, munition, level);
+
+            timer += dt;
 
             if (points >= 0 && points < 200) 
             { 
