@@ -10,6 +10,7 @@ namespace TcGame
         private Texture texture;
         public HUD h;
         public float timer = 0.0f;
+        private bool hasShootLeft = false;
 
         public Sight()
         {
@@ -29,9 +30,19 @@ namespace TcGame
             Position = movimiento;
             timer += dt;
             shotLeft();
-            
 
+            if (Keyboard.IsKeyPressed(Keyboard.Key.A) && hasShootLeft == false)
+            {
+                hasShootLeft = true;
+                shotLeft();
+            }
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.A) == false)
+            {
+                hasShootLeft = false;
+            }
         }
+
         public float moveYSight()
         {
             float posX = 10000.0f;
@@ -49,63 +60,45 @@ namespace TcGame
         }
         private void shotLeft()
         {
-            
-            if (Keyboard.IsKeyPressed(Keyboard.Key.A))
+            var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
+            foreach (Enemy e in enemy)
             {
-                var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
-                foreach (Enemy e in enemy)
+                if ((e.Position - Position).Size() < 30)
                 {
-                    if ((e.Position - Position).Size() < 30)
+                    if (e.nameEnemy == "WhiteHen")
                     {
-                        if (e.nameEnemy == "WhiteHen")
-                        {
-                            h.addPoints(10);
-                        }
-                        else if (e.nameEnemy == "GoldenHen")
-                        {
-                            h.addPoints(50);
-                        }
-                        else if (e.nameEnemy == "Bird")
-                        {
-                            h.addPoints(20);
-                        }
-                        else if (e.nameEnemy == "GreenHen")
-                        {
-                            h.liveCount(1);
-                        }
-                        e.Destroy();
-                        break;
+                        h.addPoints(10);
                     }
-                    else
+                    else if (e.nameEnemy == "GoldenHen")
                     {
-                        if (timer >= 0.5f)
-                        {
-                            timer = 0.0f;
-                            h.munitionCount(-1);
-                        }
+                        h.addPoints(50);
                     }
+                    else if (e.nameEnemy == "Bird")
+                    {
+                        h.addPoints(20);
+                    }
+                    else if (e.nameEnemy == "GreenHen")
+                    {
+                        h.liveCount(1);
+                    }
+                    e.Destroy();
+                    break;
+                }
+                else
+                {
+                    h.munitionCount(-1);
                 }
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
     public class SightX : StaticActor
     {
         private Texture texture;
         public HUD h;
         public float timer = 0.0f;
+        private bool hasShootRight = false;
+
         public SightX()
         {
             Layer = ELayer.Front;
@@ -123,7 +116,17 @@ namespace TcGame
             Vector2f movimiento = new Vector2f(565.0f, moveYSight());
             Position = movimiento;
             timer += dt;
-            shotRight();
+            
+            if (Keyboard.IsKeyPressed(Keyboard.Key.D) && hasShootRight == false)
+            {
+                hasShootRight = true;
+                shotRight();
+            }
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.D) == false)
+            {
+                hasShootRight = false;
+            }
         }
         public float moveYSight()
         {
@@ -142,43 +145,33 @@ namespace TcGame
         }
         private void shotRight()
         {
-            if (Keyboard.IsKeyPressed(Keyboard.Key.D))
+            var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
+            foreach (Enemy e in enemy)
             {
-                var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
-                foreach (Enemy e in enemy)
+                if ((e.Position - Position).Size() < 30)
                 {
-                    
-                     
-                     if ((e.Position - Position).Size() < 30)
-                     {
-                         if (e.nameEnemy == "WhiteHen")
-                         {
-                            h.addPoints(10);
-                         }
-                         else if (e.nameEnemy == "GoldenHen")
-                         {
-                             h.addPoints(50);
-                         }
-                         else if (e.nameEnemy == "Bird")
-                         {
-                             h.addPoints(20);
-                         }
-                         else if (e.nameEnemy == "GreenHen")
-                         {
-                             h.liveCount(1);
-                         }
-                         e.Destroy();
-                         break;
-                     }
-                    
-                    else
+                    if (e.nameEnemy == "WhiteHen")
                     {
-                        if (timer >= 0.5f)
-                        {
-                            timer = 0.0f;
-                            h.munitionCount(-1);
-                        }
+                        h.addPoints(10);
                     }
+                    else if (e.nameEnemy == "GoldenHen")
+                    {
+                        h.addPoints(50);
+                    }
+                    else if (e.nameEnemy == "Bird")
+                    {
+                        h.addPoints(20);
+                    }
+                    else if (e.nameEnemy == "GreenHen")
+                    {
+                        h.liveCount(1);
+                    }
+                    e.Destroy();
+                    break;
+                }
+                else
+                {
+                    h.munitionCount(-1);
                 }
             }
         }
