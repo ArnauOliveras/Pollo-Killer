@@ -1,6 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
+using System;
 
 namespace TcGame
 {
@@ -27,7 +28,8 @@ namespace TcGame
         public float LeftMaxMinX = -40;
         public float RightMaxMinX = 1040;
 
-        private bool gameStarted = false;
+        private Vector2f leftSightOffset, rightSightOffset;
+        public static Vector2f leftStartPosition, rightStartPosition;
 
         /// <summary>
         /// Accesor for MyGame, implements the Singleton pattern
@@ -74,13 +76,27 @@ namespace TcGame
             background.Speed = WorldSpeed;
 
             //if (gameStarted == true)
-            //{
-                
+            //{ 
             //}
 
-            WeaponSight weaponAim;
-            weaponAim = Scene.Create<WeaponSight>();
-            weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
+            leftSightOffset = new Vector2f(-85.0f, 250.0f);
+            rightSightOffset = new Vector2f(65.0f, 250.0f);
+
+            Sight leftSight;
+            leftSight = Scene.Create<Sight>();
+            leftSight.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2 + leftSightOffset;
+            leftStartPosition = leftSight.Position;
+
+            SightX rightSight;
+            rightSight = Scene.Create<SightX>();
+            rightSight.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2 + rightSightOffset;
+            rightStartPosition = rightSight.Position;
+
+            Console.WriteLine(leftStartPosition);
+            Console.WriteLine(rightStartPosition);
+            //WeaponSight weaponAim;
+            //weaponAim = Scene.Create<WeaponSight>();
+            //weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
 
             CreateWhiteHenSpawner();
             CreateGreenHenSpawner(); 
