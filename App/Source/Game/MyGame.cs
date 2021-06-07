@@ -27,6 +27,8 @@ namespace TcGame
         public float LeftMaxMinX = -20;
         public float RightMaxMinX = 1020;
 
+        private bool gameStarted = false;
+
         /// <summary>
         /// Accesor for MyGame, implements the Singleton pattern
         /// </summary>
@@ -48,23 +50,13 @@ namespace TcGame
 
         }
 
-        public enum State
-        {
-            None,
-            Splash,
-            Playing,
-            Option
-        }
-
-        public State currentState = State.None;
-
         public void Init()
         {
 
-            if (Keyboard.IsKeyPressed(Keyboard.Key.D)) ChangeState(State.Splash);
-            //Engine.Get.Scene.Create<Background>();
-            //HUD myHUD = Engine.Get.Scene.Create<HUD>();
-            //Engine.Get.Scene.Create<FishSpawner>();
+            //if (Keyboard.IsKeyPressed(Keyboard.Key.D))
+            //{
+            //    gameStarted = true;
+            //}
 
             Resources.LoadResources();
 
@@ -77,68 +69,27 @@ namespace TcGame
 
             Scene = new Scene();
 
-            //Background background;
-            //background = Scene.Create<Background>();
-            //background.Speed = WorldSpeed;
+            Background background;
+            background = Scene.Create<Background>();
+            background.Speed = WorldSpeed;
 
-            
-            //WeaponSight weaponAim;
-            //weaponAim = Scene.Create<WeaponSight>();
-            //weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
+            //if (gameStarted == true)
+            //{
+                
+            //}
 
+            WeaponSight weaponAim;
+            weaponAim = Scene.Create<WeaponSight>();
+            weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
 
-            //CreateWhiteHenSpawner();
-            //CreateGreenHenSpawner();
-            //CreateGoldenHenSpawner();
-            //CreateBirdSpawner();
-            //CreateWhiteHenXSpawner();
-            //CreateGreenHenXSpawner();
-            //CreateGoldenHenXSpawner();
-            //CreateBirdXSpawner();
-        
-        }
-
-        public void ChangeState(State newState)
-        {
-            onLeaveState(currentState);
-            onEnterState(newState);
-            currentState = newState;
-
-        }
-
-        private void onLeaveState(State oldState)
-        {
-            switch (currentState)
-            {
-                case State.Splash:
-                    Scene.Destroy(Scene.GetFirst<Splash>());
-                    break;
-
-                case State.Playing:
-                    Scene.Destroy(Scene.GetFirst<Background>());
-                    Scene.Destroy(Scene.GetFirst<HUD>());
-                    break;
-                case State.Option:
-                    break;
-            }
-        }
-
-        private void onEnterState(State newState)
-        {
-            switch (newState)
-            {
-                case State.Splash:
-                    Scene.Create<Splash>();
-                    break;
-
-                case State.Playing:
-                    Scene.Create<Background>();
-                    Scene.Create<HUD>();
-                    break;
-
-                case State.Option:
-                    break;
-            }
+            CreateWhiteHenSpawner();
+            CreateGreenHenSpawner();
+            CreateGoldenHenSpawner();
+            CreateBirdSpawner();
+            CreateWhiteHenXSpawner();
+            CreateGreenHenXSpawner();
+            CreateGoldenHenXSpawner();
+            CreateBirdXSpawner();
         }
 
         private void CreateWhiteHenSpawner()
