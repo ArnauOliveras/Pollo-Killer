@@ -65,7 +65,7 @@ namespace TcGame
             var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
             foreach (Enemy e in enemy)
             {
-                if ((e.Position - Position).Size() < 30)
+                if ((e.Position - Position).Size() < 40)
                 {
                     if (e.nameEnemy == "WhiteHen")
                     {
@@ -153,7 +153,7 @@ namespace TcGame
             var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
             foreach (Enemy e in enemy)
             {
-                if ((e.Position - Position).Size() < 30)
+                if ((e.Position - Position).Size() < 40)
                 {
                     if (e.nameEnemy == "WhiteHen")
                     {
