@@ -11,6 +11,7 @@ namespace TcGame
         public float speed;
         public bool left;
         public float movimientoY;
+        public string nameEnemy;
         protected Enemy()
         {
             OnDestroy += Explode;
@@ -31,7 +32,7 @@ namespace TcGame
                 Position += movimiento * speed;
             }
 
-            if (Position.X >= 1030)
+            if (Position.X >= 1040 || Position.X <= -40 || Position.Y <= -40)
             {
                 Destroy();
             }

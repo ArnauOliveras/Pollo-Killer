@@ -12,6 +12,7 @@ namespace TcGame
 
         public WhiteHen()
         {
+            nameEnemy = "WhiteHen";
             texture = Resources.Texture("Textures/Enemies/Chicken01");
             texture.Repeated = true;
             AnimatedSprite = new AnimatedSprite(texture, 3, 1);
@@ -33,6 +34,9 @@ namespace TcGame
 
         public WhiteHenX()
         {
+            left = false;
+
+            nameEnemy = "WhiteHen";
             texture = Resources.Texture("Textures/Enemies/Chicken01X");
             texture.Repeated = true;
             AnimatedSprite = new AnimatedSprite(texture, 3, 1);
@@ -40,14 +44,8 @@ namespace TcGame
             AnimatedSprite.FrameTime = 0.1f;
             Position = new Vector2f(1024, 768) / 2;
             Center();
-            left = false;
             speed = 2.0f;
             movimientoY = generateMovimientoY();
-        }
-
-        public override void Update(float dt)
-        {
-            base.Update(dt);
         }
     }
 }

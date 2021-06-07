@@ -11,6 +11,7 @@ namespace TcGame
 
         public GoldenHen()
         {
+            nameEnemy = "goldenHen";
             texture = Resources.Texture("Textures/Enemies/Chicken02");
             texture.Repeated = true;
             AnimatedSprite = new AnimatedSprite(texture, 3, 1);
@@ -32,6 +33,7 @@ namespace TcGame
 
         public GoldenHenX()
         {
+            nameEnemy = "goldenHen";
             texture = Resources.Texture("Textures/Enemies/Chicken02X");
             texture.Repeated = true;
             AnimatedSprite = new AnimatedSprite(texture, 3, 1);
@@ -42,11 +44,6 @@ namespace TcGame
             left = false;
             speed = 5.0f;
             movimientoY = generateMovimientoY();
-        }
-
-        public override void Update(float dt)
-        {
-            base.Update(dt);
         }
     }
 }

@@ -11,6 +11,7 @@ namespace TcGame
 
         public Bird()
         {
+            nameEnemy = "Bird";
             texture = Resources.Texture("Textures/Enemies/Bird");
             texture.Repeated = true;
             AnimatedSprite = new AnimatedSprite(texture, 4, 1);
@@ -21,6 +22,7 @@ namespace TcGame
             left = true;
             speed = 2.5f;
             movimientoY = generateMovimientoY();
+            
         }
 
     }
@@ -31,6 +33,7 @@ namespace TcGame
 
         public BirdX()
         {
+            nameEnemy = "Bird";
             texture = Resources.Texture("Textures/Enemies/BirdX");
             texture.Repeated = true;
             AnimatedSprite = new AnimatedSprite(texture, 4, 1);
@@ -42,11 +45,5 @@ namespace TcGame
             speed = 2.5f;
             movimientoY = generateMovimientoY();
         }
-
-        public override void Update(float dt)
-        {
-            base.Update(dt);
-        }
-
     }
 }

@@ -81,11 +81,12 @@ namespace TcGame
             //background = Scene.Create<Background>();
             //background.Speed = WorldSpeed;
 
+            
             //WeaponSight weaponAim;
             //weaponAim = Scene.Create<WeaponSight>();
             //weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
 
-            
+
             //CreateWhiteHenSpawner();
             //CreateGreenHenSpawner();
             //CreateGoldenHenSpawner();
@@ -94,6 +95,7 @@ namespace TcGame
             //CreateGreenHenXSpawner();
             //CreateGoldenHenXSpawner();
             //CreateBirdXSpawner();
+        
         }
 
         public void ChangeState(State newState)
