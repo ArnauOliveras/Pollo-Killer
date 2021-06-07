@@ -15,10 +15,10 @@ namespace TcGame
         private float coolDown;
         public string nameEnemy;
         private int white, green, golden, bird;
-        private int MaxWhite = 2;
+        private int MaxWhite = 1;
         private int MaxGreen = 1;
         private int MaxGolden = 1;
-        private int MaxBird = 2;
+        private int MaxBird = 1;
 
         public void Reset()
         {
@@ -38,8 +38,8 @@ namespace TcGame
             bird = 0;
 
             checkEnemys();
-            if ()
-            
+            canSpawnEnemy();
+
              coolDown -= dt;
              if (coolDown < 0.0f)
              {
@@ -66,15 +66,15 @@ namespace TcGame
             var enemys = MyGame.Instance.Scene.GetAll<Enemy>();
             foreach (Enemy e in enemys)
             {
-                if (e.nameEnemy == "whiteHen")
+                if (e.nameEnemy == "WhiteHen")
                 {
                     white++;
                 }
-                else if (e.nameEnemy == "greenHen")
+                else if (e.nameEnemy == "GreenHen")
                 {
                     green++;
                 }
-                else if(e.nameEnemy == "goldenHen")
+                else if(e.nameEnemy == "GoldenHen")
                 {
                     golden++;
                 }
@@ -84,6 +84,38 @@ namespace TcGame
                 }
             }
 
+        }
+
+        private void canSpawnEnemy()
+        {
+            if (nameEnemy == "whiteHen")
+            {
+                if (white > MaxWhite)
+                {
+                    Reset();
+                }
+            }
+            else if (nameEnemy == "greenHen")
+            {
+                if (green > MaxGreen)
+                {
+                    Reset();
+                }
+            }
+            else if (nameEnemy == "goldenHen")
+            {
+                if (golden > MaxGolden)
+                {
+                    Reset();
+                }
+            }
+            else if (nameEnemy == "Bird")
+            {
+                if (bird > MaxBird)
+                {
+                    Reset();
+                }
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ namespace TcGame
 
         public GreenHen()
         {
-            nameEnemy = "greenHen";
+            nameEnemy = "GreenHen";
             texture = Resources.Texture("Textures/Enemies/Chicken03");
             texture.Repeated = true;
             AnimatedSprite = new AnimatedSprite(texture, 3, 1);
@@ -33,7 +33,7 @@ namespace TcGame
 
         public GreenHenX()
         {
-            nameEnemy = "greenHen";
+            nameEnemy = "GreenHen";
             texture = Resources.Texture("Textures/Enemies/Chicken03X");
             texture.Repeated = true;
             AnimatedSprite = new AnimatedSprite(texture, 3, 1);

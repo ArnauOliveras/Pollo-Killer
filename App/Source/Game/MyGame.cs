@@ -92,12 +92,6 @@ namespace TcGame
             rightSight.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2 + rightSightOffset;
             rightStartPosition = rightSight.Position;
 
-            Console.WriteLine(leftStartPosition);
-            Console.WriteLine(rightStartPosition);
-            //WeaponSight weaponAim;
-            //weaponAim = Scene.Create<WeaponSight>();
-            //weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
-
             CreateWhiteHenSpawner();
             CreateGreenHenSpawner(); 
             CreateGoldenHenSpawner();
