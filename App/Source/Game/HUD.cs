@@ -7,7 +7,7 @@ namespace TcGame
 {
     public class HUD : Actor, Drawable
     {
-        Text tHUD;
+        Text  tHUD;
         Font font;
 
         public float speedEnemys = 1.0f;
