@@ -75,17 +75,17 @@ namespace TcGame
         public void checkLevel()
         {
 
-            if (points >= 0 && points < 20)
+            if (points >= 0 && points < 200)
             {
                 level = 1;
                 speedEnemys = 1.0f;
                 timeSpawn = 1.0f;
             }
-            if (points >= 20 && points < 500)
+            if (points >= 200 && points < 500)
             {
                 level = 2;
                 speedEnemys = 1.5f;
-                timeSpawn = 0.8f;
+                timeSpawn = 0.9f;
             }
             if (points >= 500 && points < 1000)
             {

@@ -96,7 +96,7 @@ namespace TcGame
                 {
                     if (nameEnemy == "Bird")
                     {
-                        h.liveCount(-3);
+                        h.liveCount(-2);
                     }
                     else
                     {
