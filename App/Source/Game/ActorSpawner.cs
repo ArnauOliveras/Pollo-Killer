@@ -44,7 +44,7 @@ namespace TcGame
              if (coolDown < 0.0f)
              {
                  SpawnActor();
-                 Reset();
+                 Reset(); 
              }
             
         }
