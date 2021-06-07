@@ -147,27 +147,30 @@ namespace TcGame
                 var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
                 foreach (Enemy e in enemy)
                 {
-                    if ((e.Position - Position).Size() < 30)
-                    {
-                        if (e.nameEnemy == "WhiteHen")
-                        {
+                    
+                     
+                     if ((e.Position - Position).Size() < 30)
+                     {
+                         if (e.nameEnemy == "WhiteHen")
+                         {
                             h.addPoints(10);
-                        }
-                        else if (e.nameEnemy == "GoldenHen")
-                        {
-                            h.addPoints(50);
-                        }
-                        else if (e.nameEnemy == "Bird")
-                        {
-                            h.addPoints(20);
-                        }
-                        else if (e.nameEnemy == "GreenHen")
-                        {
-                            h.liveCount(1);
-                        }
-                        e.Destroy();
-                        break;
-                    }
+                         }
+                         else if (e.nameEnemy == "GoldenHen")
+                         {
+                             h.addPoints(50);
+                         }
+                         else if (e.nameEnemy == "Bird")
+                         {
+                             h.addPoints(20);
+                         }
+                         else if (e.nameEnemy == "GreenHen")
+                         {
+                             h.liveCount(1);
+                         }
+                         e.Destroy();
+                         break;
+                     }
+                    
                     else
                     {
                         if (timer >= 0.5f)

@@ -12,6 +12,7 @@ namespace TcGame
         public bool left;
         public float movimientoY;
         public string nameEnemy;
+        public HUD h = new HUD();
 
         //private static Vector2f sightPosition;
 
@@ -39,10 +40,6 @@ namespace TcGame
             moveEnemy();
             DestroyThisEnemy();
 
-            //if (sightPosition == Position)
-            //{
-            //    CheckIfDestroy();
-            //}
         }
 
 
@@ -103,89 +100,10 @@ namespace TcGame
         {
             if (Position.X >= 1050 || Position.X <= -40 || Position.Y <= -50)
             {
+                h.liveCount(-1);
                 Destroy();
             }
         }
-
-
-
-
-        /// /////////////////////////////////////////////////////////////////////////////////////
-        //public static void CheckPosition(Vector2f theSightPosition)
-        //{
-        //    sightPosition = theSightPosition;
-        //}
-
-        //private void CheckIfDestroy()
-        //{
-        //    if (left == true)
-        //    {
-        //        Destroy();
-        //    }
-
-        //    if (left == false)
-        //    {
-        //        Destroy();
-        //    }
-        //}
-
-
-        
-        //private void checkEnemys()
-        //{
-        //    var enemys = MyGame.Instance.Scene.GetAll<Enemy>();
-        //    foreach (Enemy e in enemys)
-        //    {
-        //        if (e.nameEnemy == "WhiteHen")
-        //        {
-        //            white++;
-        //        }
-        //        else if (e.nameEnemy == "GreenHen")
-        //        {
-        //            green++;
-        //        }
-        //        else if (e.nameEnemy == "GoldenHen")
-        //        {
-        //            golden++;
-        //        }
-        //        else if (e.nameEnemy == "Bird")
-        //        {
-        //            bird++;
-        //        }
-        //    }
-
-        //}
-        //private void canSpawnEnemy()
-        //{
-        //    if (nameEnemy == "whiteHen")
-        //    {
-        //        if (white > MaxWhite)
-        //        {
-        //            Destroy();
-        //        }
-        //    }
-        //    else if (nameEnemy == "greenHen")
-        //    {
-        //        if (green > MaxGreen)
-        //        {
-        //            Destroy();
-        //        }
-        //    }
-        //    else if (nameEnemy == "goldenHen")
-        //    {
-        //        if (golden > MaxGolden)
-        //        {
-        //            Destroy();
-        //        }
-        //    }
-        //    else if (nameEnemy == "Bird")
-        //    {
-        //        if (bird > MaxBird)
-        //        {
-        //            Destroy();
-        //        }
-        //    }
-        //}
     }
 }
 
