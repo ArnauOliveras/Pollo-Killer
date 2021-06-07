@@ -58,6 +58,11 @@ namespace TcGame
             {
                 Position = MyGame.rightStartPosition;
             }
+
+            if ()
+            {
+                Enemy.CheckPosition(Position);
+            }
         }
     }
 }

@@ -12,6 +12,7 @@ namespace TcGame
         public bool left;
         public float movimientoY;
         public string nameEnemy;
+        private static Vector2f sightPosition;
 
         protected Enemy()
         {
@@ -82,6 +83,7 @@ namespace TcGame
                 Position += movimiento * speed;
             }
         }
+
         private void DestroyThisEnemy()
         {
             if (Position.X >= 1050 || Position.X <= -40 || Position.Y <= -50)
@@ -89,6 +91,31 @@ namespace TcGame
                 Destroy();
             }
         }
+
+        public static void CheckPosition(Vector2f theSightPosition)
+        {
+            sightPosition = theSightPosition;
+        }
+
+        private void CheckIfDestroy()
+        {
+            if (left == true)
+            {
+                if (sightPosition == Position)
+                {
+                    Destroy();
+                }
+            }
+
+            if (left == false)
+            {
+                if (sightPosition == Position)
+                {
+                    Destroy();
+                }
+            }
+        }
+
     }
 }
 
