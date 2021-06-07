@@ -34,39 +34,7 @@ namespace TcGame
             base.Update(dt);
 
             tHUD.DisplayedString = String.Format(" puntos: {0} \n vidas: {1}\n municion: {2}\n nivel: {3}", points, lives, munition, level);
-
-            timer += dt;
-
-            if (points >= 0 && points < 200) 
-            { 
-                level = 1; 
-                speedEnemys = 1.0f;
-                timeSpawn = 1.0f;
-            }
-            if (points >= 200  && points < 500) 
-            { 
-                level = 2; 
-                speedEnemys = 1.5f;
-                timeSpawn = 0.8f;
-            }
-            if (points >= 500 && points < 1000) 
-            { 
-                level = 3; 
-                speedEnemys = 2.0f;
-                timeSpawn = 0.8f;
-            }
-            if (points >= 1000 && points < 2000) 
-            { 
-                level = 4; 
-                speedEnemys = 2.5f;
-                timeSpawn = 0.7f;
-            }
-            if (points >= 2000) 
-            { 
-                level = 5; 
-                speedEnemys = 3.0f;
-                timeSpawn = 0.6f;
-            }
+            
 
             if (munition <= 0 && lives > 0)
             {
@@ -125,6 +93,40 @@ namespace TcGame
         public int getLevel()
         {
             return level;
+        }
+        public void checkLevel()
+        {
+
+            if (points >= 0 && points < 20)
+            {
+                level = 1;
+                speedEnemys = 1.0f;
+                timeSpawn = 1.0f;
+            }
+            if (points >= 20 && points < 500)
+            {
+                level = 2;
+                speedEnemys = 1.5f;
+                timeSpawn = 0.8f;
+            }
+            if (points >= 500 && points < 1000)
+            {
+                level = 3;
+                speedEnemys = 2.0f;
+                timeSpawn = 0.8f;
+            }
+            if (points >= 1000 && points < 2000)
+            {
+                level = 4;
+                speedEnemys = 2.5f;
+                timeSpawn = 0.7f;
+            }
+            if (points >= 2000)
+            {
+                level = 5;
+                speedEnemys = 3.0f;
+                timeSpawn = 0.6f;
+            }
         }
     }
 }
