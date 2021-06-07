@@ -38,14 +38,14 @@ namespace TcGame
             bird = 0;
 
             checkEnemys();
-            if ()
+            //if ()
             
-             coolDown -= dt;
-             if (coolDown < 0.0f)
-             {
-                 SpawnActor();
-                 Reset(); 
-             }
+            coolDown -= dt;
+            if (coolDown < 0.0f)
+            {
+                SpawnActor();
+                Reset(); 
+            }
             
         }
 
