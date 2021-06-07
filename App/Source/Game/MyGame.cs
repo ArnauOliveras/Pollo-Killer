@@ -61,12 +61,10 @@ namespace TcGame
         public void Init()
         {
 
-            if (Keyboard.Key.Space)
+            if (Keyboard.IsKeyPressed(Keyboard.Key.D)) ChangeState(State.Splash);
             //Engine.Get.Scene.Create<Background>();
             //HUD myHUD = Engine.Get.Scene.Create<HUD>();
             //Engine.Get.Scene.Create<FishSpawner>();
-            ChangeState(State.Splash);
-
 
             Resources.LoadResources();
 
@@ -79,23 +77,23 @@ namespace TcGame
 
             Scene = new Scene();
 
-            Background background;
-            background = Scene.Create<Background>();
-            background.Speed = WorldSpeed;
+            //Background background;
+            //background = Scene.Create<Background>();
+            //background.Speed = WorldSpeed;
 
-            WeaponSight weaponAim;
-            weaponAim = Scene.Create<WeaponSight>();
-            weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
+            //WeaponSight weaponAim;
+            //weaponAim = Scene.Create<WeaponSight>();
+            //weaponAim.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2;
 
             
-            CreateWhiteHenSpawner();
-            CreateGreenHenSpawner();
-            CreateGoldenHenSpawner();
-            CreateBirdSpawner();
-            CreateWhiteHenXSpawner();
-            CreateGreenHenXSpawner();
-            CreateGoldenHenXSpawner();
-            CreateBirdXSpawner();
+            //CreateWhiteHenSpawner();
+            //CreateGreenHenSpawner();
+            //CreateGoldenHenSpawner();
+            //CreateBirdSpawner();
+            //CreateWhiteHenXSpawner();
+            //CreateGreenHenXSpawner();
+            //CreateGoldenHenXSpawner();
+            //CreateBirdXSpawner();
         }
 
         public void ChangeState(State newState)
@@ -104,6 +102,41 @@ namespace TcGame
             onEnterState(newState);
             currentState = newState;
 
+        }
+
+        private void onLeaveState(State oldState)
+        {
+            switch (currentState)
+            {
+                case State.Splash:
+                    Scene.Destroy(Scene.GetFirst<Splash>());
+                    break;
+
+                case State.Playing:
+                    Scene.Destroy(Scene.GetFirst<Background>());
+                    Scene.Destroy(Scene.GetFirst<HUD>());
+                    break;
+                case State.Option:
+                    break;
+            }
+        }
+
+        private void onEnterState(State newState)
+        {
+            switch (newState)
+            {
+                case State.Splash:
+                    Scene.Create<Splash>();
+                    break;
+
+                case State.Playing:
+                    Scene.Create<Background>();
+                    Scene.Create<HUD>();
+                    break;
+
+                case State.Option:
+                    break;
+            }
         }
 
         private void CreateWhiteHenSpawner()
