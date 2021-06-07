@@ -19,6 +19,7 @@ namespace TcGame
             Position = new Vector2f(1024, 768) / 2;
             Center();
         }
+
         public override void Update(float dt)
         {
             base.Update(dt);
@@ -46,6 +47,7 @@ namespace TcGame
             Position = new Vector2f(1024, 768) / 2;
             Center();
         }
+
         public override void Update(float dt)
         {
             base.Update(dt);
