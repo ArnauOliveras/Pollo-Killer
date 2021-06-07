@@ -12,24 +12,37 @@ namespace TcGame
         public bool left;
         public float movimientoY;
         public string nameEnemy;
-        private static Vector2f sightPosition;
+
+        //private static Vector2f sightPosition;
+
+        //private int white, green, golden, bird;
+        //private int MaxWhite = 2;
+        //private int MaxGreen = 1;
+        //private int MaxGolden = 1;
+        //private int MaxBird = 2;
 
         protected Enemy()
         {
             OnDestroy += Explode;
-
+            //white = 0;
+            //green = 0;
+            //golden = 0;
+            //bird = 0;
+            //checkEnemys();
+            //canSpawnEnemy();
         }
 
         public override void Update(float dt)
         {
             base.Update(dt);
+
             moveEnemy();
             DestroyThisEnemy();
 
-            if (sightPosition == Position)
-            {
-                CheckIfDestroy();
-            }
+            //if (sightPosition == Position)
+            //{
+            //    CheckIfDestroy();
+            //}
         }
 
 
@@ -94,24 +107,85 @@ namespace TcGame
             }
         }
 
-        public static void CheckPosition(Vector2f theSightPosition)
-        {
-            sightPosition = theSightPosition;
-        }
 
-        private void CheckIfDestroy()
-        {
-            if (left == true)
-            {
-                Destroy();
-            }
 
-            if (left == false)
-            {
-                Destroy();
-            }
-        }
 
+        /// /////////////////////////////////////////////////////////////////////////////////////
+        //public static void CheckPosition(Vector2f theSightPosition)
+        //{
+        //    sightPosition = theSightPosition;
+        //}
+
+        //private void CheckIfDestroy()
+        //{
+        //    if (left == true)
+        //    {
+        //        Destroy();
+        //    }
+
+        //    if (left == false)
+        //    {
+        //        Destroy();
+        //    }
+        //}
+
+
+        
+        //private void checkEnemys()
+        //{
+        //    var enemys = MyGame.Instance.Scene.GetAll<Enemy>();
+        //    foreach (Enemy e in enemys)
+        //    {
+        //        if (e.nameEnemy == "WhiteHen")
+        //        {
+        //            white++;
+        //        }
+        //        else if (e.nameEnemy == "GreenHen")
+        //        {
+        //            green++;
+        //        }
+        //        else if (e.nameEnemy == "GoldenHen")
+        //        {
+        //            golden++;
+        //        }
+        //        else if (e.nameEnemy == "Bird")
+        //        {
+        //            bird++;
+        //        }
+        //    }
+
+        //}
+        //private void canSpawnEnemy()
+        //{
+        //    if (nameEnemy == "whiteHen")
+        //    {
+        //        if (white > MaxWhite)
+        //        {
+        //            Destroy();
+        //        }
+        //    }
+        //    else if (nameEnemy == "greenHen")
+        //    {
+        //        if (green > MaxGreen)
+        //        {
+        //            Destroy();
+        //        }
+        //    }
+        //    else if (nameEnemy == "goldenHen")
+        //    {
+        //        if (golden > MaxGolden)
+        //        {
+        //            Destroy();
+        //        }
+        //    }
+        //    else if (nameEnemy == "Bird")
+        //    {
+        //        if (bird > MaxBird)
+        //        {
+        //            Destroy();
+        //        }
+        //    }
+        //}
     }
 }
 

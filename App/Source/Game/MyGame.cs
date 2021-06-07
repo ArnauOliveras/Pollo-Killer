@@ -92,6 +92,8 @@ namespace TcGame
             CreateBirdXSpawner();
         }
 
+
+
         private void CreateWhiteHenSpawner()
         {
             ActorSpawner<WhiteHen> spawner;
@@ -99,41 +101,8 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
             spawner.MinTime = 5.0f;
-            spawner.MaxTime = 10.0f;
-            spawner.nameEnemy = "whiteHen";
-            spawner.Reset();
-        }
-        private void CreateGreenHenSpawner()
-        {
-            ActorSpawner<GreenHen> spawner;
-            spawner = Scene.Create<ActorSpawner<GreenHen>>(); 
-            spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
-            spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
-            spawner.MinTime = 20.0f;
             spawner.MaxTime = 30.0f;
-            spawner.nameEnemy = "greenHen";
-            spawner.Reset();
-        }
-        private void CreateGoldenHenSpawner()
-        {
-            ActorSpawner<GoldenHen> spawner;
-            spawner = Scene.Create<ActorSpawner<GoldenHen>>();
-            spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
-            spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
-            spawner.MinTime = 10.0f;
-            spawner.MaxTime = 20.0f;
-            spawner.nameEnemy = "goldenHen";
-            spawner.Reset();
-        }
-        private void CreateBirdSpawner()
-        {
-            ActorSpawner<Bird> spawner;
-            spawner = Scene.Create<ActorSpawner<Bird>>();
-            spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
-            spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
-            spawner.MinTime = 5.0f;
-            spawner.MaxTime = 10.0f;
-            spawner.nameEnemy = "Bird";
+            spawner.nameEnemy = "whiteHen";
             spawner.Reset();
         }
         private void CreateWhiteHenXSpawner()
@@ -143,19 +112,52 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MinTime = 5.0f;
-            spawner.MaxTime = 10.0f;
+            spawner.MaxTime = 30.0f;
             spawner.nameEnemy = "whiteHen";
+            spawner.Reset();
+        }
+
+
+
+
+
+        private void CreateGreenHenSpawner()
+        {
+            ActorSpawner<GreenHen> spawner;
+            spawner = Scene.Create<ActorSpawner<GreenHen>>(); 
+            spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MinTime = 30.0f;
+            spawner.MaxTime = 100.0f;
+            spawner.nameEnemy = "greenHen";
             spawner.Reset();
         }
         private void CreateGreenHenXSpawner()
         {
             ActorSpawner<GreenHenX> spawner;
-            spawner = Scene.Create<ActorSpawner<GreenHenX>>(); 
+            spawner = Scene.Create<ActorSpawner<GreenHenX>>();
             spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
-            spawner.MinTime = 20.0f;
-            spawner.MaxTime = 30.0f;
+            spawner.MinTime = 30.0f;
+            spawner.MaxTime = 100.0f;
             spawner.nameEnemy = "greenHen";
+            spawner.Reset();
+        }
+
+
+
+
+
+
+        private void CreateGoldenHenSpawner()
+        {
+            ActorSpawner<GoldenHen> spawner;
+            spawner = Scene.Create<ActorSpawner<GoldenHen>>();
+            spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MinTime = 20.0f;
+            spawner.MaxTime = 80.0f;
+            spawner.nameEnemy = "goldenHen";
             spawner.Reset();
         }
         private void CreateGoldenHenXSpawner()
@@ -164,11 +166,29 @@ namespace TcGame
             spawner = Scene.Create<ActorSpawner<GoldenHenX>>();
             spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
-            spawner.MinTime = 10.0f;
-            spawner.MaxTime = 20.0f;
+            spawner.MinTime = 20.0f;
+            spawner.MaxTime = 80.0f;
             spawner.nameEnemy = "goldenHen";
             spawner.Reset();
         }
+
+
+
+
+
+
+        private void CreateBirdSpawner()
+        {
+            ActorSpawner<Bird> spawner;
+            spawner = Scene.Create<ActorSpawner<Bird>>();
+            spawner.MinPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MaxPosition = new Vector2f(LeftMaxMinX, maxMinY);
+            spawner.MinTime = 5.0f;
+            spawner.MaxTime = 30.0f;
+            spawner.nameEnemy = "Bird";
+            spawner.Reset();
+        }
+        
         private void CreateBirdXSpawner()
         {
             ActorSpawner<BirdX> spawner;
@@ -176,10 +196,14 @@ namespace TcGame
             spawner.MinPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MaxPosition = new Vector2f(RightMaxMinX, maxMinY);
             spawner.MinTime = 5.0f;
-            spawner.MaxTime = 10.0f;
+            spawner.MaxTime = 30.0f;
             spawner.nameEnemy = "Bird" ;
             spawner.Reset();
         }
+
+
+
+
 
         public void DeInit()
         {

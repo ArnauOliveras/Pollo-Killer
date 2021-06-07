@@ -23,18 +23,24 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
-            Vector2f movimiento = new Vector2f(0.0f, -2.0f);
-            Position += movimiento;
+            Vector2f movimiento = new Vector2f(415.0f, moveYSight());
+            Position = movimiento;
 
-            if (Position.Y <= 0)
+        }
+        public float moveYSight()
+        {
+            float posX = 10000.0f;
+            float posY = 570.0f;
+            var enemys = MyGame.Instance.Scene.GetAll<Enemy>();
+            foreach (Enemy e in enemys)
             {
-                Position = MyGame.leftStartPosition;
+                if (Math.Abs(e.Position.X - Position.X) < posX)
+                {
+                    posX = Math.Abs(e.Position.X - Position.X);
+                    posY = e.Position.Y;
+                }
             }
-
-            if (Keyboard.IsKeyPressed(Keyboard.Key.A))
-            {
-                Enemy.CheckPosition(Position);
-            }
+            return posY;
         }
     }
 
@@ -56,18 +62,23 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
-            Vector2f movimiento = new Vector2f(0.0f, -2.0f);
-            Position += movimiento;
-
-            if (Position.Y <= 0)
+            Vector2f movimiento = new Vector2f(565.0f, moveYSight());
+            Position = movimiento;
+        }
+        public float moveYSight()
+        {
+            float posX = 10000.0f;
+            float posY = 570.0f;
+            var enemys = MyGame.Instance.Scene.GetAll<Enemy>();
+            foreach (Enemy e in enemys)
             {
-                Position = MyGame.rightStartPosition;
+                if (Math.Abs(e.Position.X - Position.X) < posX)
+                {
+                    posX = Math.Abs(e.Position.X - Position.X);
+                    posY = e.Position.Y;
+                }
             }
-
-            if (Keyboard.IsKeyPressed(Keyboard.Key.D))
-            {
-                Enemy.CheckPosition(Position);
-            }
+            return posY;
         }
     }
 }
