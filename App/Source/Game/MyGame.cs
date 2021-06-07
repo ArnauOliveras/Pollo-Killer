@@ -24,8 +24,8 @@ namespace TcGame
         /// </summary>
         private static MyGame instance;
         public float maxMinY = 600;
-        public float LeftMaxMinX = -20;
-        public float RightMaxMinX = 1020;
+        public float LeftMaxMinX = -40;
+        public float RightMaxMinX = 1040;
 
         private bool gameStarted = false;
 
