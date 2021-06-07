@@ -30,15 +30,18 @@ namespace TcGame
             Position = movimiento;
             timer += dt;
 
-            if (Keyboard.IsKeyPressed(Keyboard.Key.A) && hasShootLeft == false)
+            if (!(h.getMunition() <= 0))
             {
-                hasShootLeft = true;
-                shotLeft();
-            }
+                if (Keyboard.IsKeyPressed(Keyboard.Key.A) && hasShootLeft == false)
+                {
+                    hasShootLeft = true;
+                    shotLeft();
+                }
 
-            if (Keyboard.IsKeyPressed(Keyboard.Key.A) == false)
-            {
-                hasShootLeft = false;
+                if (Keyboard.IsKeyPressed(Keyboard.Key.A) == false)
+                {
+                    hasShootLeft = false;
+                }
             }
         }
 
@@ -115,16 +118,19 @@ namespace TcGame
             Vector2f movimiento = new Vector2f(565.0f, moveYSight());
             Position = movimiento;
             timer += dt;
-            
-            if (Keyboard.IsKeyPressed(Keyboard.Key.D) && hasShootRight == false)
-            {
-                hasShootRight = true;
-                shotRight();
-            }
 
-            if (Keyboard.IsKeyPressed(Keyboard.Key.D) == false)
+            if (!(h.getMunition() <= 0))
             {
-                hasShootRight = false;
+                if (Keyboard.IsKeyPressed(Keyboard.Key.D) && hasShootRight == false)
+                {
+                    hasShootRight = true;
+                    shotRight();
+                }
+
+                if (Keyboard.IsKeyPressed(Keyboard.Key.D) == false)
+                {
+                    hasShootRight = false;
+                }
             }
         }
         public float moveYSight()
