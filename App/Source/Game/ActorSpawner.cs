@@ -20,7 +20,7 @@ namespace TcGame
         {
             Random r = new Random();
             float d = (float)r.NextDouble();
-
+            h.checkLevel();
             coolDown = (MaxTime * d + (1.0f - d) * MinTime) * h.timeSpawn;
             //coolDown = 0.3f;
         }

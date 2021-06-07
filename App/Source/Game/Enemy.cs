@@ -14,23 +14,9 @@ namespace TcGame
         public string nameEnemy;
         public HUD h = new HUD();
 
-        //private static Vector2f sightPosition;
-
-        //private int white, green, golden, bird;
-        //private int MaxWhite = 2;
-        //private int MaxGreen = 1;
-        //private int MaxGolden = 1;
-        //private int MaxBird = 2;
-
         protected Enemy()
         {
             OnDestroy += Explode;
-            //white = 0;
-            //green = 0;
-            //golden = 0;
-            //bird = 0;
-            //checkEnemys();
-            //canSpawnEnemy();
         }
 
         public override void Update(float dt)
@@ -39,7 +25,9 @@ namespace TcGame
 
             moveEnemy();
             DestroyThisEnemy();
-
+            h.checkLevel();
+            
+            
             if (h.getLives() <= 0)
             {
                 Destroy();
