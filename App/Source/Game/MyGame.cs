@@ -82,6 +82,10 @@ namespace TcGame
             rightSight.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2 + rightSightOffset;
             rightStartPosition = rightSight.Position;
 
+            HUD hud;
+            hud = Scene.Create<HUD>();
+            hud.Position = new Vector2f(videoMode.Width, videoMode.Height);
+
             CreateWhiteHenSpawner();
             CreateGreenHenSpawner(); 
             CreateGoldenHenSpawner();

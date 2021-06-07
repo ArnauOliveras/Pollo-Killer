@@ -29,7 +29,6 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
-            Vector2f movimiento = new Vector2f(0.0f, 0.0f);
         }
     }
 }

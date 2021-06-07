@@ -26,6 +26,9 @@ namespace TcGame
             Vector2f movimiento = new Vector2f(415.0f, moveYSight());
             Position = movimiento;
 
+            shotLeft();
+            
+
         }
         public float moveYSight()
         {
@@ -41,6 +44,21 @@ namespace TcGame
                 }
             }
             return posY;
+        }
+        private void shotLeft()
+        {
+            if (Keyboard.IsKeyPressed(Keyboard.Key.A))
+            {
+                var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
+                foreach (Enemy e in enemy)
+                {
+                    if ((e.Position - Position).Size() < 30)
+                    {
+                        e.Destroy();
+                        break;
+                    }
+                }
+            }
         }
     }
 
@@ -64,6 +82,7 @@ namespace TcGame
             base.Update(dt);
             Vector2f movimiento = new Vector2f(565.0f, moveYSight());
             Position = movimiento;
+            shotRight();
         }
         public float moveYSight()
         {
@@ -79,6 +98,21 @@ namespace TcGame
                 }
             }
             return posY;
+        }
+        private void shotRight()
+        {
+            if (Keyboard.IsKeyPressed(Keyboard.Key.D))
+            {
+                var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
+                foreach (Enemy e in enemy)
+                {
+                    if ((e.Position - Position).Size() < 30)
+                    {
+                        e.Destroy();
+                        break;
+                    }
+                }
+            }
         }
     }
 }
