@@ -424,6 +424,9 @@
     <None Update="Data\Textures\Circle.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\Textures\End.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Textures\Enemies\Bird.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

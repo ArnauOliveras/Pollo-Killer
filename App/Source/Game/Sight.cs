@@ -82,7 +82,7 @@ namespace TcGame
                     else if (e.nameEnemy == "GreenHen")
                     {
                         h.liveCount(1);
-                        h.addPoints(100);
+                        h.addPoints(50);
                     }
                     e.Destroy();
                     break;

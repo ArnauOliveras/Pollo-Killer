@@ -29,7 +29,7 @@ namespace TcGame
         public float LeftMaxMinX = -40;
         public float RightMaxMinX = 1040;
 
-        private Vector2f leftSightOffset, rightSightOffset, hudOffset;
+        private Vector2f leftSightOffset, rightSightOffset;
         public static Vector2f leftStartPosition, rightStartPosition;
 
         public static bool gameStarted = false;
@@ -78,6 +78,11 @@ namespace TcGame
             intro.Speed = WorldSpeed;
             intro.Position = new Vector2f(65, 50);
 
+            End end;
+            end = Scene.Create<End>();
+            end.Speed = WorldSpeed;
+            end.Position = new Vector2f(videoMode.Width, videoMode.Height);
+
             Background background;
             background = Scene.Create<Background>();
             background.Speed = WorldSpeed;
@@ -95,10 +100,9 @@ namespace TcGame
             rightSight.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2 + rightSightOffset;
             rightStartPosition = rightSight.Position;
 
-            hudOffset = new Vector2f(0.0f, 5.0f);
             HUD hud;
             hud = Scene.Create<HUD>();
-            hud.Position = new Vector2f(videoMode.Width, videoMode.Height) + hudOffset;
+            hud.Position = new Vector2f(videoMode.Width, videoMode.Height);
 
             HUDBackground hudBack;
             hudBack = Scene.Create<HUDBackground>();
@@ -257,6 +261,11 @@ namespace TcGame
         public bool IsAlive()
         {
             return Window.IsOpen;
+        }
+
+        private void GameOver()
+        {
+
         }
     }
 }
