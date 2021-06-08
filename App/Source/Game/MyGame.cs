@@ -34,6 +34,7 @@ namespace TcGame
 
         public static bool gameStarted = false;
         HUD theHud = new HUD();
+        private Music music;
 
         /// <summary>
         /// Accesor for MyGame, implements the Singleton pattern
@@ -67,7 +68,7 @@ namespace TcGame
             Debug = new DebugManager();
             Debug.Init();
 
-            Music music = new Music("Data/Audios/Song.wav");
+            music = new Music("Data/Audios/Song.wav");
             music.Play();
             music.Loop = true;
 
@@ -242,6 +243,16 @@ namespace TcGame
             if (HUD.upgrade == true)
             {
                 Upgrade();
+            }
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.P) && music.Status == SoundStatus.Playing)
+            {
+                music.Pause();
+            }
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.P) && music.Status == SoundStatus.Paused)
+            {
+                music.Play();
             }
 
             Debug.Update(dt);
