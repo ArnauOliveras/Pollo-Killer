@@ -15,8 +15,8 @@ namespace TcGame
 
 
         private static int points = 0;
-        private static int lives = 5;
-        private static int munition = 10;
+        private static int lives = 0;
+        private static int munition = 0;
         private static int level = 1;
 
         private float timer = 0;
@@ -100,6 +100,16 @@ namespace TcGame
         public int getLevel()
         {
             return level;
+        }
+
+        public void setMunition(int munitionNum)
+        {
+            munition = munitionNum;
+        }
+
+        public void setLives(int livesNum)
+        {
+            lives = livesNum;
         }
 
         public void checkLevel()

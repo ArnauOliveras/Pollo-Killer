@@ -1,6 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
+using SFML.Audio;
 using System;
 
 namespace TcGame
@@ -30,6 +31,9 @@ namespace TcGame
 
         private Vector2f leftSightOffset, rightSightOffset;
         public static Vector2f leftStartPosition, rightStartPosition;
+
+        public static bool gameStarted = false;
+        HUD theHud = new HUD();
 
         /// <summary>
         /// Accesor for MyGame, implements the Singleton pattern
@@ -62,6 +66,10 @@ namespace TcGame
 
             Debug = new DebugManager();
             Debug.Init();
+
+            //Music music = new Music("Data/Song.wav");
+            //music.Play();
+            //music.Loop = true;
 
             Scene = new Scene();
 
@@ -211,6 +219,20 @@ namespace TcGame
             if (Keyboard.IsKeyPressed(Keyboard.Key.Escape))
             {
                 Window.Close();
+            }
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Num1) && gameStarted == false)
+            {
+                gameStarted = true;
+                theHud.setLives(10);
+                theHud.setMunition(20);
+            }
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Num2) && gameStarted == false)
+            {
+                gameStarted = true;
+                theHud.setLives(5);
+                theHud.setMunition(10);
             }
 
             Debug.Update(dt);

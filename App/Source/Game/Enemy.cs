@@ -28,7 +28,7 @@ namespace TcGame
             h.checkLevel();
             
             
-            if (h.getLives() <= 0)
+            if (h.getLives() <= 0 || MyGame.gameStarted == false)
             {
                 Destroy();
             }

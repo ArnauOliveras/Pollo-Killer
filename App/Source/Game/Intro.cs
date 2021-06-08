@@ -7,7 +7,6 @@ namespace TcGame
     class Intro : StaticActor
     {
         private Texture texture;
-
         public float Speed = 30.0f;
 
         public Intro()
@@ -28,6 +27,11 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
+
+            if (MyGame.gameStarted == true)
+            {
+                Destroy();
+            }
         }
     }
 }
