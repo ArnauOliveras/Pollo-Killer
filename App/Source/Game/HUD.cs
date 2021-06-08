@@ -1,6 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
+using SFML.Audio;
 using System;
 
 namespace TcGame
@@ -35,7 +36,7 @@ namespace TcGame
         {
             base.Update(dt);
 
-            tHUD.DisplayedString = String.Format("            {0}                     {1}" +
+            tHUD.DisplayedString = String.Format("             {0}                     {1}" +
             "                                            {2}                                                {3}", lives, munition, level, points);
 
             timer += dt;

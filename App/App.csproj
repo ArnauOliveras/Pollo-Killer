@@ -130,6 +130,12 @@
     <None Update="Data\Arkanoid\Textures\Gifts\star.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Data\Audios\Dead.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Audios\Disparo.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

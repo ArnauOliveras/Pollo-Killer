@@ -8,7 +8,6 @@ namespace TcGame
 {
     public class Sight : StaticActor
     {
-        public Music m;
         private Texture texture;
         public HUD h;
         private bool hasShootLeft = false;
@@ -35,8 +34,7 @@ namespace TcGame
             {
                 if (Keyboard.IsKeyPressed(Keyboard.Key.A) && hasShootLeft == false)
                 {
-                    m = new Music("Data/Disparo.wav");
-                    m.Play();
+                    
                     hasShootLeft = true;
                     shotLeft();
                 }
@@ -87,6 +85,7 @@ namespace TcGame
                         h.liveCount(1);
                         h.addPoints(50);
                     }
+                    
                     e.Destroy();
                     break;
                 }
@@ -100,7 +99,6 @@ namespace TcGame
 
     public class SightX : StaticActor
     {
-        public Music m;
         private Texture texture;
         public HUD h;
         private bool hasShootRight = false;
@@ -127,8 +125,7 @@ namespace TcGame
             {
                 if (Keyboard.IsKeyPressed(Keyboard.Key.D) && hasShootRight == false)
                 {
-                    m = new Music("Data/Disparo.wav");
-                    m.Play();
+                    
                     hasShootRight = true;
                     shotRight();
                 }
