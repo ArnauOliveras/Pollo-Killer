@@ -26,14 +26,16 @@ namespace TcGame
             Layer = ELayer.HUD;
             font = new Font("Data/Fonts/LuckiestGuy.ttf");
             tHUD = new Text("", font);
-            tHUD.FillColor = new Color(Color.Blue);
+            tHUD.FillColor = new Color(Color.White);
         }
 
         public override void Update(float dt)
         {
             base.Update(dt);
 
-            tHUD.DisplayedString = String.Format(" puntos: {0} \n vidas: {1}\n municion: {2}\n nivel: {3}", points, lives, munition, level);
+            tHUD.DisplayedString = String.Format("            {0}                     {1}" +
+            "                                            {2}                                                {3}", lives, munition, level, points);
+
 
             timer += dt;
 
@@ -55,7 +57,7 @@ namespace TcGame
                 }
             }
 
-            if (lives <= 0)
+            if (lives <= 0 && MyGame.gameStarted == true)
             {
                 tHUD.FillColor = new Color(Color.Red);
             }
@@ -75,8 +77,8 @@ namespace TcGame
         {
             
             lives += l;
-            if (lives >= 6)
-                lives = 5;
+            //if (lives >= 6)
+            //    lives = 5;
             if (lives <= 0)
                 lives = 0;
         }
@@ -145,6 +147,33 @@ namespace TcGame
                 speedEnemys = 3.0f;
                 timeSpawn = 0.6f;
             }
+        }
+    }
+
+    public class HUDBackground : StaticActor
+    {
+        private Texture texture;
+
+        public float Speed = 30.0f;
+
+        public HUDBackground()
+        {
+            Layer = ELayer.Front;
+
+            texture = Resources.Texture("Textures/HUD");
+            texture.Repeated = true;
+            Sprite = new Sprite(texture);
+        }
+
+        public override void Draw(RenderTarget target, RenderStates states)
+        {
+            states.Texture = texture;
+            base.Draw(target, states);
+        }
+
+        public override void Update(float dt)
+        {
+            base.Update(dt);
         }
     }
 }
