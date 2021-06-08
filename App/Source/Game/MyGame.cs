@@ -96,7 +96,7 @@ namespace TcGame
             rightStartPosition = rightSight.Position;
 
             CreateWhiteHenSpawner();
-            CreateGreenHenSpawner(); 
+            CreateGreenHenSpawner();
             CreateGoldenHenSpawner();
             CreateBirdSpawner();
             CreateWhiteHenXSpawner();

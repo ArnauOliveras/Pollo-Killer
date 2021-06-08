@@ -1,12 +1,14 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
+using SFML.Audio;
 using System;
 
 namespace TcGame
 {
     public class Sight : StaticActor
     {
+        public Music m;
         private Texture texture;
         public HUD h;
         private bool hasShootLeft = false;
@@ -20,6 +22,7 @@ namespace TcGame
             Sprite = new Sprite(texture);
             Position = new Vector2f(1024, 768) / 2;
             Center();
+            
         }
 
         public override void Update(float dt)
@@ -32,6 +35,8 @@ namespace TcGame
             {
                 if (Keyboard.IsKeyPressed(Keyboard.Key.A) && hasShootLeft == false)
                 {
+                    m = new Music("Data/Disparo.wav");
+                    m.Play();
                     hasShootLeft = true;
                     shotLeft();
                 }
@@ -95,6 +100,7 @@ namespace TcGame
 
     public class SightX : StaticActor
     {
+        public Music m;
         private Texture texture;
         public HUD h;
         private bool hasShootRight = false;
@@ -121,6 +127,8 @@ namespace TcGame
             {
                 if (Keyboard.IsKeyPressed(Keyboard.Key.D) && hasShootRight == false)
                 {
+                    m = new Music("Data/Disparo.wav");
+                    m.Play();
                     hasShootRight = true;
                     shotRight();
                 }
