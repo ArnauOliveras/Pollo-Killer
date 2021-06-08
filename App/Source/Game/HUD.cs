@@ -102,21 +102,25 @@ namespace TcGame
             if (count == 2 && upgradeLvl == 1)
             {
                 upgradeShow1 = true;
+                munition += 5;
                 count = 0;
             }
             if (count == 2 && upgradeLvl == 2)
             {
                 upgradeShow2 = true;
+                munition += 5;
                 count = 0;
             }
             if (count == 2 && upgradeLvl == 3)
             {
                 upgradeShow3 = true;
+                munition += 5;
                 count = 0;
             }
             if (count == 2 && upgradeLvl == 4)
             {
                 upgradeShow4 = true;
+                munition += 10;
                 count = 0;
             }
         }
