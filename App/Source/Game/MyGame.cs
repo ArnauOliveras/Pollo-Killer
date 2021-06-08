@@ -67,9 +67,9 @@ namespace TcGame
             Debug = new DebugManager();
             Debug.Init();
 
-            //Music music = new Music("Data/Song.wav");
-            //music.Play();
-            //music.Loop = true;
+            Music music = new Music("Data/Audios/Song.wav");
+            music.Play();
+            music.Loop = true;
 
             Scene = new Scene();
 
