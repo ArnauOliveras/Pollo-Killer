@@ -65,4 +65,35 @@ namespace TcGame
             }
         }
     }
+
+    class Upgrade : StaticActor
+    {
+        private Texture texture;
+        public float Speed = 30.0f;
+
+        public Upgrade()
+        {
+            Layer = ELayer.Front;
+
+            texture = Resources.Texture("Textures/Upgrade");
+            texture.Repeated = true;
+            Sprite = new Sprite(texture);
+        }
+
+        public override void Draw(RenderTarget target, RenderStates states)
+        {
+            states.Texture = texture;
+            base.Draw(target, states);
+        }
+
+        public override void Update(float dt)
+        {
+            base.Update(dt);
+
+            if (MyGame.gameStarted == false || HUD.upgrade == false)
+            {
+                Destroy();
+            }
+        }
+    }
 }
