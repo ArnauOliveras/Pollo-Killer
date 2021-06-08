@@ -4,18 +4,17 @@ using SFML.Window;
 
 namespace TcGame
 {
-    public class Background : StaticActor
+    class Intro : StaticActor
     {
-        //private Vector2f offset;
         private Texture texture;
 
         public float Speed = 30.0f;
 
-        public Background()
+        public Intro()
         {
-            Layer = ELayer.Background;
+            Layer = ELayer.Front;
 
-            texture = Resources.Texture("Textures/Back");
+            texture = Resources.Texture("Textures/Start");
             texture.Repeated = true;
             Sprite = new Sprite(texture);
         }
@@ -29,8 +28,6 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
-            //offset -= new Vector2f(0.0f, dt * Speed / texture.Size.Y);
         }
     }
 }
-

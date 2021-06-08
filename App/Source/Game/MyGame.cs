@@ -65,6 +65,11 @@ namespace TcGame
 
             Scene = new Scene();
 
+            Intro intro;
+            intro = Scene.Create<Intro>();
+            intro.Speed = WorldSpeed;
+            intro.Position = new Vector2f(65, 50);
+
             Background background;
             background = Scene.Create<Background>();
             background.Speed = WorldSpeed;

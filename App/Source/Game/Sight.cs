@@ -14,7 +14,7 @@ namespace TcGame
 
         public Sight()
         {
-            Layer = ELayer.Front;
+            Layer = ELayer.Middle;
             h = new HUD();
             texture = Resources.Texture("Textures/Mira");
             texture.Repeated = true;
@@ -65,7 +65,7 @@ namespace TcGame
             var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
             foreach (Enemy e in enemy)
             {
-                if ((e.Position - Position).Size() < 40)
+                if ((e.Position - Position).Size() <= 40)
                 {
                     if (e.nameEnemy == "WhiteHen")
                     {
@@ -82,6 +82,7 @@ namespace TcGame
                     else if (e.nameEnemy == "GreenHen")
                     {
                         h.liveCount(1);
+                        h.addPoints(100);
                     }
                     e.Destroy();
                     break;
@@ -103,7 +104,8 @@ namespace TcGame
 
         public SightX()
         {
-            Layer = ELayer.Front;
+            Layer = ELayer.Middle;
+
             h = new HUD();
             texture = Resources.Texture("Textures/Mira");
             texture.Repeated = true;
@@ -155,7 +157,7 @@ namespace TcGame
             var enemy = MyGame.Instance.Scene.GetAll<Enemy>();
             foreach (Enemy e in enemy)
             {
-                if ((e.Position - Position).Size() < 40)
+                if ((e.Position - Position).Size() <= 40)
                 {
                     if (e.nameEnemy == "WhiteHen")
                     {
@@ -172,6 +174,7 @@ namespace TcGame
                     else if (e.nameEnemy == "GreenHen")
                     {
                         h.liveCount(1);
+                        h.addPoints(100);
                     }
                     e.Destroy();
                     break;
