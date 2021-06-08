@@ -37,7 +37,7 @@ namespace TcGame
         {
             base.Update(dt);
 
-            tHUD.DisplayedString = String.Format("             {0}                     {1}" +
+            tHUD.DisplayedString = String.Format("             {0}                    {1}" +
             "                                            {2}                                                {3}", lives, munition, level, points);
 
             timer += dt;

@@ -16,7 +16,7 @@ namespace TcGame
             texture.Repeated = true;
             AnimatedSprite = new AnimatedSprite(texture, 3, 1);
             AnimatedSprite.Loop = true;
-            AnimatedSprite.FrameTime = 0.1f;
+            AnimatedSprite.FrameTime = 0.075f;
             Position = new Vector2f(1024, 768) / 2;
             Center();
             left = true;
@@ -36,7 +36,7 @@ namespace TcGame
             texture.Repeated = true;
             AnimatedSprite = new AnimatedSprite(texture, 3, 1);
             AnimatedSprite.Loop = true;
-            AnimatedSprite.FrameTime = 0.1f;
+            AnimatedSprite.FrameTime = 0.075f;
             Position = new Vector2f(1024, 768) / 2;
             Center();
             left = false;
