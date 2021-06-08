@@ -104,7 +104,7 @@ namespace TcGame
             hudBack.Speed = WorldSpeed;
 
             CreateWhiteHenSpawner();
-            CreateGreenHenSpawner(); 
+            CreateGreenHenSpawner();
             CreateGoldenHenSpawner();
             CreateBirdSpawner();
             CreateWhiteHenXSpawner();
