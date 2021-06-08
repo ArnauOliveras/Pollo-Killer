@@ -12,7 +12,6 @@ namespace TcGame
         private Texture texture;
         public HUD h;
         private bool hasShootLeft = false;
-        public float timer = 0;
 
         public Sight()
         {
@@ -30,8 +29,6 @@ namespace TcGame
         {
             base.Update(dt);
 
-            timer += dt;
-
             Vector2f movimiento = new Vector2f(415.0f, moveYSight());
             Position = movimiento;
 
@@ -39,7 +36,6 @@ namespace TcGame
             {
                 if (Keyboard.IsKeyPressed(Keyboard.Key.A) && hasShootLeft == false)
                 {
-                    
                     hasShootLeft = true;
                     shotLeft();
                 }
@@ -99,11 +95,7 @@ namespace TcGame
                 }
                 else
                 {
-                    if (timer >= 0.2f)
-                    {
-                        h.munitionCount(-1);
-                        timer = 0;
-                    }
+                    h.munitionCount(-1);
                 }
             }
         }
@@ -115,7 +107,6 @@ namespace TcGame
         private Texture texture;
         public HUD h;
         private bool hasShootRight = false;
-        public float timer = 0;
 
         public SightX()
         {
@@ -133,16 +124,14 @@ namespace TcGame
         {
             base.Update(dt);
 
-            timer += dt;
-
             Vector2f movimiento = new Vector2f(565.0f, moveYSight());
             Position = movimiento;
 
             if (!(h.getMunition() <= 0))
             {
+                
                 if (Keyboard.IsKeyPressed(Keyboard.Key.D) && hasShootRight == false)
                 {
-                    
                     hasShootRight = true;
                     shotRight();
                 }
@@ -201,11 +190,7 @@ namespace TcGame
                 }
                 else
                 {
-                    if (timer >= 0.2f)
-                    {
-                        h.munitionCount(-1);
-                        timer = 0;
-                    }
+                    h.munitionCount(-1);
                 }
             }
         }
