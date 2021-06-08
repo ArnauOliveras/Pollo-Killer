@@ -120,7 +120,7 @@ namespace TcGame
             if (count == 2 && upgradeLvl == 4)
             {
                 upgradeShow4 = true;
-                munition += 10;
+                munition += 5;
                 count = 0;
             }
         }
