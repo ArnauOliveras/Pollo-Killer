@@ -250,7 +250,7 @@ namespace TcGame
                 music.Pause();
             }
 
-            if (Keyboard.IsKeyPressed(Keyboard.Key.P) && music.Status == SoundStatus.Paused)
+            if (Keyboard.IsKeyPressed(Keyboard.Key.O) && music.Status == SoundStatus.Paused)
             {
                 music.Play();
             }
