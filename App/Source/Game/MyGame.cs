@@ -96,8 +96,7 @@ namespace TcGame
             CreateBirdXSpawner();
         }
 
-
-
+        //White
         private void CreateWhiteHenSpawner()
         {
             ActorSpawner<WhiteHen> spawner;
@@ -121,10 +120,7 @@ namespace TcGame
             spawner.Reset();
         }
 
-
-
-
-
+        //Green
         private void CreateGreenHenSpawner()
         {
             ActorSpawner<GreenHen> spawner;
@@ -148,11 +144,7 @@ namespace TcGame
             spawner.Reset();
         }
 
-
-
-
-
-
+        //Golden
         private void CreateGoldenHenSpawner()
         {
             ActorSpawner<GoldenHen> spawner;
@@ -176,11 +168,7 @@ namespace TcGame
             spawner.Reset();
         }
 
-
-
-
-
-
+        //Bird
         private void CreateBirdSpawner()
         {
             ActorSpawner<Bird> spawner;
@@ -204,10 +192,6 @@ namespace TcGame
             spawner.nameEnemy = "Bird" ;
             spawner.Reset();
         }
-
-
-
-
 
         public void DeInit()
         {

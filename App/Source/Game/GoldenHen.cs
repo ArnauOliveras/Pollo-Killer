@@ -23,8 +23,6 @@ namespace TcGame
             speed = 5.0f;
             movimientoY = generateMovimientoY(); 
         }
-
-        
     }
 
     public class GoldenHenX : Enemy

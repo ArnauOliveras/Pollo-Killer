@@ -22,7 +22,6 @@ namespace TcGame
             Sight WeaponAim2 = MyGame.Instance.Scene.Create<Sight>();
             WeaponAim2.Position = Position + WeaponAimOffset2;
             WeaponAim2.Rotation = Rotation;
-
         }
     }
 }

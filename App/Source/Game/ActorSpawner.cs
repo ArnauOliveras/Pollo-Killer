@@ -49,8 +49,6 @@ namespace TcGame
 
             MyGame.Instance.Scene.Create<T>(new Vector2f(X, Y));
         }
-
-        
     }
 }
 

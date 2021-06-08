@@ -60,6 +60,7 @@ namespace TcGame
                 tHUD.FillColor = new Color(Color.Red);
             }
         }
+
         public void Draw(RenderTarget rt, RenderStates st)
         {
             rt.Draw(tHUD);
@@ -69,6 +70,7 @@ namespace TcGame
         {
             points += p;
         }
+
         public void liveCount (int l)
         {
             
@@ -78,6 +80,7 @@ namespace TcGame
             if (lives <= 0)
                 lives = 0;
         }
+
         public void munitionCount(int m)
         {
             if (!(munition == 0))
@@ -88,14 +91,17 @@ namespace TcGame
         {
             return munition;
         }
+
         public int getLives()
         {
             return lives;
         }
+
         public int getLevel()
         {
             return level;
         }
+
         public void checkLevel()
         {
 

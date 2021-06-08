@@ -9,7 +9,6 @@ namespace TcGame
     {
         private Texture texture;
         
-
         public WhiteHen()
         {
             nameEnemy = "WhiteHen";
@@ -24,13 +23,11 @@ namespace TcGame
             speed = 2.0f;
             movimientoY = generateMovimientoY();
         }
-
     }
 
     public class WhiteHenX : Enemy
     {
         private Texture texture;
-
 
         public WhiteHenX()
         {

@@ -133,6 +133,7 @@ namespace TcGame
                 }
             }
         }
+
         public float moveYSight()
         {
             float posX = 10000.0f;
@@ -148,6 +149,7 @@ namespace TcGame
             }
             return posY;
         }
+
         private void shotRight()
         {
             var enemy = MyGame.Instance.Scene.GetAll<Enemy>();

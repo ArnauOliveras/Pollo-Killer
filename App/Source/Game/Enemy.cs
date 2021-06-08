@@ -73,7 +73,6 @@ namespace TcGame
             return movimientoDeLaY;
         }
 
-
         private void moveEnemy()
         {
             if (left)
