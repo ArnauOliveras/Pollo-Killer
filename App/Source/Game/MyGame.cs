@@ -67,9 +67,9 @@ namespace TcGame
             Debug = new DebugManager();
             Debug.Init();
 
-            Music music = new Music("Data/Song.wav");
-            music.Play();
-            music.Loop = true;
+            //Music music = new Music("Data/Song.wav");
+            //music.Play();
+            //music.Loop = true;
 
             Scene = new Scene();
 
@@ -94,14 +94,6 @@ namespace TcGame
             rightSight = Scene.Create<SightX>();
             rightSight.Position = new Vector2f(videoMode.Width, videoMode.Height) / 2 + rightSightOffset;
             rightStartPosition = rightSight.Position;
-
-            HUD hud;
-            hud = Scene.Create<HUD>();
-            hud.Position = new Vector2f(videoMode.Width, videoMode.Height);
-
-            HUDBackground hudBack;
-            hudBack = Scene.Create<HUDBackground>();
-            hudBack.Speed = WorldSpeed;
 
             CreateWhiteHenSpawner();
             CreateGreenHenSpawner(); 
@@ -230,6 +222,7 @@ namespace TcGame
                 gameStarted = true;
                 theHud.setLives(10);
                 theHud.setMunition(20);
+                CreateHUD();
             }
 
             if (Keyboard.IsKeyPressed(Keyboard.Key.Num2) && gameStarted == false)
@@ -237,6 +230,8 @@ namespace TcGame
                 gameStarted = true;
                 theHud.setLives(5);
                 theHud.setMunition(10);
+                CreateHUD();
+
             }
 
             if (HUD.gameOver == true)
@@ -269,6 +264,16 @@ namespace TcGame
             end = Scene.Create<End>();
             end.Speed = WorldSpeed;
             end.Position = new Vector2f(160, 100);
+        }
+
+        private void CreateHUD()
+        {
+            HUD hud;
+            hud = Scene.Create<HUD>();
+
+            HUDBackground hudBack;
+            hudBack = Scene.Create<HUDBackground>();
+            hudBack.Speed = WorldSpeed;
         }
     }
 }
