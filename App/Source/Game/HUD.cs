@@ -20,7 +20,8 @@ namespace TcGame
         private static int munition = 0;
         private static int level = 1;
 
-        public static bool gameOver = false;
+        public static bool gameOver = false, upgrade = false;
+        private bool upgradeShow1 = false, upgradeShow2 = false, upgradeShow3 = false, upgradeShow4 = false;
 
         private float timer = 0;
 
@@ -63,6 +64,40 @@ namespace TcGame
             {
                 tHUD.FillColor = new Color(Color.Red);
                 gameOver = true;
+            }
+
+            if (points >= 200 && upgradeShow1 == false)
+            {
+                UpgradeLevel();
+            }
+            if (points >= 500 && upgradeShow2 == false)
+            {
+                UpgradeLevel();
+                upgradeShow2 = true;
+            }
+            if (points >= 1000 && upgradeShow3 == false)
+            {
+                UpgradeLevel();
+                upgradeShow3 = true;
+            }
+            if (points >= 2000 && upgradeShow4 == false)
+            {
+                UpgradeLevel();
+                upgradeShow4 = true;
+            }
+        }
+
+        private void UpgradeLevel()
+        {
+            if (timer <= 5.0f)
+            {
+                upgrade = true;
+            }
+
+            if (timer > 5.0f)
+            {
+                upgrade = false;
+                timer = 0;
             }
         }
 
@@ -120,7 +155,6 @@ namespace TcGame
 
         public void checkLevel()
         {
-
             if (points >= 0 && points < 200)
             {
                 level = 1;

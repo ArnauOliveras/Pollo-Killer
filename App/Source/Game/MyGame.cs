@@ -239,6 +239,11 @@ namespace TcGame
                 GameOver();
             }
 
+            if (HUD.upgrade == true)
+            {
+                Upgrade();
+            }
+
             Debug.Update(dt);
             Scene.Update(dt);
         }
@@ -274,6 +279,14 @@ namespace TcGame
             HUDBackground hudBack;
             hudBack = Scene.Create<HUDBackground>();
             hudBack.Speed = WorldSpeed;
+        }
+
+        public void Upgrade()
+        {
+            Upgrade upgrade;
+            upgrade = Scene.Create<Upgrade>();
+            upgrade.Speed = WorldSpeed;
+            upgrade.Position = new Vector2f(20, 100);
         }
     }
 }
