@@ -1,6 +1,7 @@
 ﻿using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
+using SFML.Audio;
 
 namespace TcGame
 {
@@ -16,6 +17,8 @@ namespace TcGame
             texture = Resources.Texture("Textures/Start");
             texture.Repeated = true;
             Sprite = new Sprite(texture);
+
+            
         }
 
         public override void Draw(RenderTarget target, RenderStates states)

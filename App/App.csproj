@@ -136,6 +136,9 @@
     <None Update="Data\Canción.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\Disparo.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\earth.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -155,7 +158,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Data\Song.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Data\sun.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
