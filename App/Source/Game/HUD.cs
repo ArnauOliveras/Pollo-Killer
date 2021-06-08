@@ -19,6 +19,8 @@ namespace TcGame
         private static int munition = 0;
         private static int level = 1;
 
+        public static bool gameOver = false;
+
         private float timer = 0;
 
         public HUD()
@@ -35,7 +37,6 @@ namespace TcGame
 
             tHUD.DisplayedString = String.Format("            {0}                     {1}" +
             "                                            {2}                                                {3}", lives, munition, level, points);
-
 
             timer += dt;
 
@@ -60,6 +61,7 @@ namespace TcGame
             if (lives <= 0 && MyGame.gameStarted == true)
             {
                 tHUD.FillColor = new Color(Color.Red);
+                gameOver = true;
             }
         }
 
