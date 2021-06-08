@@ -35,8 +35,8 @@ namespace TcGame
             {
                 if (Keyboard.IsKeyPressed(Keyboard.Key.A) && hasShootLeft == false)
                 {
-                    m = new Music("Data/Disparo.wav");
-                    m.Play();
+                    //m = new Music("Data/Disparo.wav");
+                    //m.Play();
                     hasShootLeft = true;
                     shotLeft();
                 }
@@ -127,8 +127,8 @@ namespace TcGame
             {
                 if (Keyboard.IsKeyPressed(Keyboard.Key.D) && hasShootRight == false)
                 {
-                    m = new Music("Data/Disparo.wav");
-                    m.Play();
+                    //m = new Music("Data/Song.wav");
+                    //m.Play();
                     hasShootRight = true;
                     shotRight();
                 }

@@ -21,7 +21,7 @@ namespace TcGame
 
         public static bool gameOver = false, upgrade = false;
         private bool upgradeShow1 = false, upgradeShow2 = false, upgradeShow3 = false, upgradeShow4 = false;
-
+        int count = 0;
         private float timer = 0;
 
         public HUD()
@@ -35,10 +35,10 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
-
-            tHUD.DisplayedString = String.Format("            {0}                     {1}" +
-            "                                            {2}                                                {3}", lives, munition, level, points);
-
+             
+            tHUD.DisplayedString = String.Format("             {0}                      {1}" +
+            "                                           {2}                                                {3}", lives, munition, level, points);
+            
             timer += dt;
 
             if (munition <= 0 && lives > 0)
@@ -67,36 +67,56 @@ namespace TcGame
 
             if (points >= 200 && upgradeShow1 == false)
             {
-                UpgradeLevel();
+                UpgradeLevel(1);
             }
             if (points >= 500 && upgradeShow2 == false)
             {
-                UpgradeLevel();
-                upgradeShow2 = true;
+                UpgradeLevel(2);
             }
             if (points >= 1000 && upgradeShow3 == false)
             {
-                UpgradeLevel();
-                upgradeShow3 = true;
+                UpgradeLevel(3);
             }
             if (points >= 2000 && upgradeShow4 == false)
             {
-                UpgradeLevel();
-                upgradeShow4 = true;
+                UpgradeLevel(4);
             }
         }
 
-        private void UpgradeLevel()
+        private void UpgradeLevel(int upgradeLvl)
         {
-            if (timer <= 5.0f)
+            
+            if (timer <= 2.0f)
             {
                 upgrade = true;
             }
 
-            if (timer > 5.0f)
+            if (timer > 2.0f)
             {
                 upgrade = false;
                 timer = 0;
+                count++; 
+            }
+
+            if (count == 2 && upgradeLvl == 1)
+            {
+                upgradeShow1 = true;
+                count = 0;
+            }
+            if (count == 2 && upgradeLvl == 2)
+            {
+                upgradeShow2 = true;
+                count = 0;
+            }
+            if (count == 2 && upgradeLvl == 3)
+            {
+                upgradeShow3 = true;
+                count = 0;
+            }
+            if (count == 2 && upgradeLvl == 4)
+            {
+                upgradeShow4 = true;
+                count = 0;
             }
         }
 
