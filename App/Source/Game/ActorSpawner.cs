@@ -35,7 +35,6 @@ namespace TcGame
                  SpawnActor();
                  Reset(); 
              }
-            
         }
 
         public void SpawnActor()
