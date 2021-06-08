@@ -8,6 +8,7 @@ namespace TcGame
 {
     public class Sight : StaticActor
     {
+        public Music m;
         private Texture texture;
         public HUD h;
         private bool hasShootLeft = false;
@@ -85,7 +86,10 @@ namespace TcGame
                         h.liveCount(1);
                         h.addPoints(50);
                     }
-                    
+
+                    m = new Music("Data/Audios/Dead.wav");
+                    m.Play();
+
                     e.Destroy();
                     break;
                 }
@@ -99,6 +103,7 @@ namespace TcGame
 
     public class SightX : StaticActor
     {
+        public Music m;
         private Texture texture;
         public HUD h;
         private bool hasShootRight = false;
@@ -177,6 +182,8 @@ namespace TcGame
                         h.liveCount(1);
                         h.addPoints(100);
                     }
+                    m = new Music("Data/Audios/Dead.wav");
+                    m.Play();
                     e.Destroy();
                     break;
                 }
