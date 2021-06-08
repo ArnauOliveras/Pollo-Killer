@@ -12,6 +12,7 @@ namespace TcGame
         private Texture texture;
         public HUD h;
         private bool hasShootLeft = false;
+        public float timer = 0;
 
         public Sight()
         {
@@ -28,6 +29,9 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
+
+            timer += dt;
+
             Vector2f movimiento = new Vector2f(415.0f, moveYSight());
             Position = movimiento;
 
@@ -95,7 +99,11 @@ namespace TcGame
                 }
                 else
                 {
-                    h.munitionCount(-1);
+                    if (timer >= 0.2f)
+                    {
+                        h.munitionCount(-1);
+                        timer = 0;
+                    }
                 }
             }
         }
@@ -107,6 +115,7 @@ namespace TcGame
         private Texture texture;
         public HUD h;
         private bool hasShootRight = false;
+        public float timer = 0;
 
         public SightX()
         {
@@ -123,6 +132,9 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
+
+            timer += dt;
+
             Vector2f movimiento = new Vector2f(565.0f, moveYSight());
             Position = movimiento;
 
@@ -189,7 +201,11 @@ namespace TcGame
                 }
                 else
                 {
-                    h.munitionCount(-1);
+                    if (timer >= 0.2f)
+                    {
+                        h.munitionCount(-1);
+                        timer = 0;
+                    }
                 }
             }
         }

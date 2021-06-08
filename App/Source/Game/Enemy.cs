@@ -91,17 +91,16 @@ namespace TcGame
         {
             if (Position.X >= 1050 || Position.X <= -40 || Position.Y <= -50)
             {
-                if (!(nameEnemy == "GreenHen"))
+                
+                if (nameEnemy == "Bird")
                 {
-                    if (nameEnemy == "Bird")
-                    {
-                        h.liveCount(-2);
-                    }
-                    else
-                    {
-                        h.liveCount(-1); 
-                    }
+                    h.liveCount(-2);
                 }
+                else
+                {
+                    h.liveCount(-1); 
+                }
+                
 
                 Destroy();
             }
