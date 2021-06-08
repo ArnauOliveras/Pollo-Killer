@@ -30,7 +30,7 @@ namespace TcGame
             Layer = ELayer.HUD;
             font = new Font("Data/Fonts/LuckiestGuy.ttf");
             tHUD = new Text("", font);
-            tHUD.FillColor = new Color(Color.White);
+            tHUD.FillColor = new Color(Color.White); 
         }
 
         public override void Update(float dt)
