@@ -15,7 +15,7 @@ namespace TcGame
 
 
         private static int points = 0;
-        private static int lives = 0;
+        private static int lives = 0, maxLives = 0;
         private static int munition = 0;
         private static int level = 1;
 
@@ -77,8 +77,8 @@ namespace TcGame
         {
             
             lives += l;
-            //if (lives >= 6)
-            //    lives = 5;
+            if (lives >= maxLives)
+                lives = 5;
             if (lives <= 0)
                 lives = 0;
         }
@@ -112,6 +112,7 @@ namespace TcGame
         public void setLives(int livesNum)
         {
             lives = livesNum;
+            maxLives = livesNum;
         }
 
         public void checkLevel()
