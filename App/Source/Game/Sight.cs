@@ -99,7 +99,7 @@ namespace TcGame
                 }
                 else
                 {
-                    if (timer >= 0.5f)
+                    if (timer >= 0.2f)
                     {
                         h.munitionCount(-1);
                         timer = 0;
@@ -201,7 +201,7 @@ namespace TcGame
                 }
                 else
                 {
-                    if (timer >= 0.5f)
+                    if (timer >= 0.2f)
                     {
                         h.munitionCount(-1);
                         timer = 0;
