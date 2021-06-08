@@ -201,13 +201,13 @@ namespace TcGame
             {
                 level = 4;
                 speedEnemys = 2.5f;
-                timeSpawn = 0.7f;
+                timeSpawn = 0.6f;
             }
             if (points >= 2000)
             {
                 level = 5;
                 speedEnemys = 3.0f;
-                timeSpawn = 0.6f;
+                timeSpawn = 0.5f;
             }
         }
     }
