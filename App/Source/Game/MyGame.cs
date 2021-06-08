@@ -78,11 +78,6 @@ namespace TcGame
             intro.Speed = WorldSpeed;
             intro.Position = new Vector2f(65, 50);
 
-            End end;
-            end = Scene.Create<End>();
-            end.Speed = WorldSpeed;
-            end.Position = new Vector2f(videoMode.Width, videoMode.Height);
-
             Background background;
             background = Scene.Create<Background>();
             background.Speed = WorldSpeed;
@@ -244,6 +239,11 @@ namespace TcGame
                 theHud.setMunition(10);
             }
 
+            if (HUD.gameOver == true)
+            {
+                GameOver();
+            }
+
             Debug.Update(dt);
             Scene.Update(dt);
         }
@@ -265,7 +265,10 @@ namespace TcGame
 
         private void GameOver()
         {
-
+            End end;
+            end = Scene.Create<End>();
+            end.Speed = WorldSpeed;
+            end.Position = new Vector2f(160, 100);
         }
     }
 }
